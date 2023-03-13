@@ -1,13 +1,13 @@
 package game;
 
 public class GameLocationSettings {
-    private String locationName;
-    private String climate;
+    private String locationName; //Kaloyan
+    private String climate; //Vlady
     private GameStoryLocation location;
 
-    private String resources;
-    private String monsterName;
-    private String princessName;
+    private String resources; // Miro
+    private String monsterName; // Miro
+    private String princessName; //Kaloyan
 
     public GameLocationSettings(String locationName, String climate, GameStoryLocation location, String resources, String monsterName, String princessName) {
         this.locationName = locationName;
