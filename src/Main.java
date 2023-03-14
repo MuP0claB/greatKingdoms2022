@@ -1,8 +1,3 @@
-import game.GameLocationSettings;
-import game.GameStoryLocation;
-
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println();
