@@ -7,6 +7,7 @@ public class Game {
     public static void main(String[] args) {
 
         chooseLocation();
+//todo Трябва да запазим локацията и героят в Обекти !!!
 
     }
 
@@ -25,10 +26,55 @@ public class Game {
         System.out.println("2. Mountain");
         System.out.println("3. Desert");
 
-        int choose = scanner.nextInt();
-// Избира се location, като се избере локация след това се избира герой.
-        След,като се избере герой, той се запазва в даден обект.Запазва се и си остава до края на играта с него.
+        int chooseLoc = scanner.nextInt();
+        int chooseHero = 0;
+
+        switch (chooseLoc) {
+            case 1:
+                chooseSeaHero(scanner);
+                break;
+            case 2:
+                chooseMountainHero(scanner);
+                break;
+            case 3:
+
+                System.out.println("You choose location Desert");
+                break;
+            default:
+                System.out.println("Enter correct number");
+                break;
+        }
     }
 
+    private static void chooseMountainHero(Scanner scanner) {
+        int chooseHero;
+        System.out.println("You choose location Mountain");
+        System.out.println("Now you have to choose your hero: 1 or 2");
+        Hero.printMountainHeroInfo();
+        chooseHero = scanner.nextInt();
 
+        if (chooseHero == 1) {
+            System.out.println("Your hero is " + Hero.MOUNTAIN_HERO_MALE.name);
+        } else if (chooseHero == 2) {
+            System.out.println("Your hero is " + Hero.MOUNTAIN_HERO_FEMALE.name);
+        } else {
+            System.out.println("Enter correct number");
+        }
+    }
+
+    private static void chooseSeaHero(Scanner scanner) {
+        int chooseHero;
+        System.out.println("You choose location Sea");
+        System.out.println("Now you have to choose your hero: 1 or 2");
+        Hero.printSeaHeroInfo();
+        chooseHero = scanner.nextInt();
+
+        if (chooseHero == 1) {
+            System.out.println("Your hero is " + Hero.SEA_HERO_MALE.name);
+        } else if (chooseHero == 2) {
+            System.out.println("Your hero is " + Hero.SEA_HERO_FEMALE.name);
+        } else {
+            System.out.println("Enter correct number");
+        }
+    }
 }

@@ -1,6 +1,6 @@
 package game;
 
 public enum SuperAbility {
-    HYPER_VENTILATION;
+    HYPER_VENTILATION, CATCH_THOUGHTS;
 
 }
