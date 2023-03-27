@@ -45,4 +45,7 @@ public enum Hero {
         System.out.println(SEA_HERO_MALE.name + ", has " + SEA_HERO_MALE.healthPoints + " HP, and his super ability is " + SEA_HERO_MALE.ability + ".");
         System.out.println(SEA_HERO_FEMALE.name + ", has " + SEA_HERO_FEMALE.healthPoints + " HP, and her super ability is " + SEA_HERO_FEMALE.ability + ".");
     }
+    public Resources getResource(){
+        return location.getResource();
+    }
     }
