@@ -61,6 +61,13 @@ public class Game {
 
     public static void shop() {
         InstructionHelper.shopinstructions();
+        System.out.println("Please choose between 1 & 4 ");
+        Scanner scanner = new Scanner(System.in);
+        int menuChoice = scanner.nextInt();
+
+        switch (menuChoice) {
+            case 1 -> Shop.sellResource(GameData.currentHero.getResource());
+        }
     }
 
     public static void checkInventory() {

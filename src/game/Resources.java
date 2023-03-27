@@ -1,7 +1,7 @@
 package game;
 
 public enum Resources {
-    WOOD(10), FISH(10), SCORPIO(10);
+    WOOD(0), FISH(0), SCORPIO(0);
 
     private int quantity;
 
