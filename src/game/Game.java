@@ -60,13 +60,20 @@ public class Game {
     }
 
     public static void shop() {
-        InstructionHelper.shopinstructions();
+        InstructionHelper.shopInstructions();
         System.out.println("Please choose between 1 & 4 ");
         Scanner scanner = new Scanner(System.in);
         int menuChoice = scanner.nextInt();
 
         switch (menuChoice) {
-            case 1 -> Shop.sellResource(GameData.currentHero.getResource());
+            case 1:
+               GameData.currentHero.coins += Shop.sellResource(GameData.currentHero.getResource());
+                System.out.println(("Your current coins:" + GameData.currentHero.coins));
+                break;
+
+            case 2:
+                Shop.buyEquipment();
+                break;
         }
     }
 
@@ -75,7 +82,9 @@ public class Game {
     }
 
     public static void takeResources() {
-//todo ...
+        GameData.currentHero.getResource().setQuantity(GameData.currentHero.getResource().getQuantity() + 1);
+        System.out.println("Successfully increase " + GameData.currentHero.getResource().name().toLowerCase());
+
     }
 
     public static void increaseYourSkills() {

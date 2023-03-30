@@ -1,14 +1,13 @@
 package game;
 
 public class InstructionHelper {
-    public static void shopinstructions() {
+    public static void shopInstructions() {
         System.out.println("1. Sell resources");
-        System.out.println("2. Buy equipment");
-        System.out.println("3. Buy weapons");//todo with or without healthpotion
-        System.out.println("4. Back to the main menu\n");
+        System.out.println("2. Buy equipment"); // weapons and equipments
+        System.out.println("3. Back to the main menu\n");
     }
 
-    public static void takeresources() {
+    public static void takeResources() {
     }
 
     public static void increaseYourSkills() {

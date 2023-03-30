@@ -2,24 +2,27 @@ package game;
 
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public enum Hero {
 
 
-    MOUNTAIN_HERO_MALE("Marko The Great",110,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE),
+    MOUNTAIN_HERO_MALE("Marko The Great",110,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, "hand to hand combat"),
 
-    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",95,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE),
+    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",95,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, null),
 
-    SEA_HERO_MALE("Marin The Boss",123,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND),
+    SEA_HERO_MALE("Marin The Boss",123,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND,100, null),
 
-    SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND);
+    SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, null);
 
     public final String name;
     public final int healthPoints;
     public final SuperAbility ability;
-
+    public  Set<String> equipmentSet = new HashSet<>(); //избираме сет за да спестим проверката (имаме право само по 1)
     public final Location location;
+    public int coins;
     public static Map<Integer, Hero> heroChoise = new HashMap<Integer, Hero>()
 
     {{
@@ -29,11 +32,14 @@ public enum Hero {
     put(4, SEA_HERO_FEMALE);
         }};
 
-    private Hero(String name, int healthPoints, SuperAbility ability, Location location) {
+    private Hero(String name, int healthPoints, SuperAbility ability, Location location,int coins, String defaultEquipment) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.ability = ability;
         this.location = location;
+        this.coins = coins;
+        equipmentSet.add(defaultEquipment);
+
     }
 
     public static void printMountainHeroInfo() {
