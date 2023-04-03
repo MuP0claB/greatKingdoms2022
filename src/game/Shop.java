@@ -80,10 +80,10 @@ public class Shop {
                 break;
             case 5:
                 if (GameData.currentHero.equipmentSet.contains("Potion")) {
-                    System.out.println("You already have Armour");
+                    System.out.println("You already have Potion");
                 } else {
                     if (GameData.currentHero.coins >= 30) {
-                        GameData.currentHero.equipmentSet.add("Armour");
+                        GameData.currentHero.equipmentSet.add("Potion");
                         GameData.currentHero.coins -= 30;
                         System.out.println("You bought Potion. Now you have " + GameData.currentHero.coins + "coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
