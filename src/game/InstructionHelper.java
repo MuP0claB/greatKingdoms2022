@@ -5,6 +5,7 @@ public class InstructionHelper {
         System.out.println("1. Sell resources");
         System.out.println("2. Buy equipment"); // weapons and equipments
         System.out.println("3. Back to the main menu\n");
+        System.out.println("Please choose between 1 & 3 ");
     }
 
     public static void printShopEquipment(){
@@ -13,13 +14,7 @@ public class InstructionHelper {
         System.out.println("3. Knife - 40 coins.");
         System.out.println("4. Gun - 50 coins.");
         System.out.println("5. Potion - 30 coins."); // increase hero hp with 20%
-
-        /*
-        //1. Armour - increase hero hp
-        //2. Shield - increase hero hp
-        //3. Potion - increase hp with 50%
-        //4. Knife - increase
-         */
+        System.out.println("Please choose between 1 & 5");
     }
 
     public static void takeResources() {
