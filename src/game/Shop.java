@@ -16,6 +16,7 @@ public class Shop {
     public static void buyEquipment(){
         GameData.currentHero.equipmentSet.add("Shield");
         System.out.println("added shield");
+        System.out.println(GameData.currentHero.equipmentSet);
         //GameData.currentHero.equipmentSet.add("Knife");
 
         //1. Armour - increase hero hp

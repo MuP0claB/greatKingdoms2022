@@ -7,6 +7,21 @@ public class InstructionHelper {
         System.out.println("3. Back to the main menu\n");
     }
 
+    public static void printShopEquipment(){
+        System.out.println("1. Armour - 50 coins.");
+        System.out.println("2. Shield - 40 coins."); // increase hero hp with
+        System.out.println("3. Knife - 40 coins.");
+        System.out.println("4. Gun - 50 coins.");
+        System.out.println("5. Potion - 30 coins."); // increase hero hp with 20%
+
+        /*
+        //1. Armour - increase hero hp
+        //2. Shield - increase hero hp
+        //3. Potion - increase hp with 50%
+        //4. Knife - increase
+         */
+    }
+
     public static void takeResources() {
     }
 
