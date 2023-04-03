@@ -36,8 +36,8 @@ public class Game {
     public static void mainMenu() {
         Scanner scanner = new Scanner(System.in);
         InstructionHelper.printMenu();
+        System.out.println("Please choose between 1 & 5 - main menu");
         int menuChoice = scanner.nextInt();
-        System.out.println("Please choose between 1 & 5 ");
         switch (menuChoice) {
             case 1:
                 shop();
@@ -66,12 +66,14 @@ public class Game {
 
         switch (menuChoice) {
             case 1:
-               GameData.currentHero.coins += Shop.sellResource(GameData.currentHero.getResource());
+                GameData.currentHero.coins += Shop.sellResource(GameData.currentHero.getResource());
                 System.out.println(("Your current coins:" + GameData.currentHero.coins));
                 break;
-
             case 2:
                 Shop.buyEquipment();
+                break;
+            case 3:
+                mainMenu();
                 break;
         }
     }

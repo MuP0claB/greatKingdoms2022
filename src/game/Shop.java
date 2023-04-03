@@ -25,9 +25,10 @@ public class Shop {
                     System.out.println("You already have Armour");
                 } else {
                     if (GameData.currentHero.coins >= 50) {
+                        GameData.currentHero.equipmentSet.clear();
                         GameData.currentHero.equipmentSet.add("Armour");
                         GameData.currentHero.coins -= 50;
-                        System.out.println("You bought Armour");
+                        System.out.println("You bought Armour. Now you have " + GameData.currentHero.coins + "coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Armour");
@@ -35,7 +36,8 @@ public class Shop {
                 }
                 break;
             case 2:
-                System.out.println("Shield");
+                //System.out.println("Shield");
+
                 break;
             case 3:
                 System.out.println("Knife");
@@ -49,5 +51,6 @@ public class Shop {
             default:
                 InstructionHelper.printShopEquipment();
         }
+        Game.shop();
     }
 }
