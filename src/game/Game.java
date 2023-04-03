@@ -61,7 +61,6 @@ public class Game {
 
     public static void shop() {
         InstructionHelper.shopInstructions();
-        System.out.println("Please choose between 1 & 4 ");
         Scanner scanner = new Scanner(System.in);
         int menuChoice = scanner.nextInt();
 
