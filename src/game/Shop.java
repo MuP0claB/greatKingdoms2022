@@ -1,6 +1,9 @@
 package game;
 
+import java.util.Scanner;
+
 public class Shop {
+    Scanner scanner = new Scanner(System.in);
     public static int sellResource(Resources resource){
 
         if (resource.getQuantity() > 0) {
@@ -14,7 +17,29 @@ public class Shop {
     }
 
     public static void buyEquipment(){
-        GameData.currentHero.equipmentSet.add("Shield");
+        InstructionHelper.printShopEquipment();
+        int menuChoice = scanner.nextInt();
+        System.out.println("Please choose between 1 & 5 ");
+        switch (menuChoice) {
+            case 1:
+                shop();
+                break;
+            case 2:
+                checkInventory();
+                break;
+            case 3:
+                takeResources();
+                break;
+            case 4:
+                increaseYourSkills();
+                break;
+            case 5:
+                chooseYourMission();
+                break;
+            default:
+                mainMenu();
+        }
+        //GameData.currentHero.equipmentSet.add("Shield");
         System.out.println("added shield");
         System.out.println(GameData.currentHero.equipmentSet);
         //GameData.currentHero.equipmentSet.add("Knife");
