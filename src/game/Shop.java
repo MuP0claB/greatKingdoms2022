@@ -28,7 +28,7 @@ public class Shop {
                         GameData.currentHero.equipmentSet.clear();
                         GameData.currentHero.equipmentSet.add("Armour");
                         GameData.currentHero.coins -= 50;
-                        System.out.println("You bought Armour. Now you have " + GameData.currentHero.coins + "coins.");
+                        System.out.println("You bought Armour. Now you have " + GameData.currentHero.coins + " coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Armour");
@@ -42,7 +42,7 @@ public class Shop {
                     if (GameData.currentHero.coins >= 40) {
                         GameData.currentHero.equipmentSet.add("Shield");
                         GameData.currentHero.coins -= 40;
-                        System.out.println("You bought Shield. Now you have " + GameData.currentHero.coins + "coins.");
+                        System.out.println("You bought Shield. Now you have " + GameData.currentHero.coins + " coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Shield");
@@ -57,7 +57,7 @@ public class Shop {
                     if (GameData.currentHero.coins >= 40) {
                         GameData.currentHero.equipmentSet.add("Knife");
                         GameData.currentHero.coins -= 40;
-                        System.out.println("You bought Knife. Now you have " + GameData.currentHero.coins + "coins.");
+                        System.out.println("You bought Knife. Now you have " + GameData.currentHero.coins + " coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Knife");
@@ -71,7 +71,7 @@ public class Shop {
                     if (GameData.currentHero.coins >= 50) {
                         GameData.currentHero.equipmentSet.add("Gun");
                         GameData.currentHero.coins -= 50;
-                        System.out.println("You bought Gun. Now you have " + GameData.currentHero.coins + "coins.");
+                        System.out.println("You bought Gun. Now you have " + GameData.currentHero.coins + " coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Gun");
@@ -80,12 +80,12 @@ public class Shop {
                 break;
             case 5:
                 if (GameData.currentHero.equipmentSet.contains("Potion")) {
-                    System.out.println("You already have Armour");
+                    System.out.println("You already have Potion");
                 } else {
                     if (GameData.currentHero.coins >= 30) {
-                        GameData.currentHero.equipmentSet.add("Armour");
+                        GameData.currentHero.equipmentSet.add("Potion");
                         GameData.currentHero.coins -= 30;
-                        System.out.println("You bought Potion. Now you have " + GameData.currentHero.coins + "coins.");
+                        System.out.println("You bought Potion. Now you have " + GameData.currentHero.coins + " coins.");
                         System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Potion");
