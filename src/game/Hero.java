@@ -9,13 +9,13 @@ import java.util.Set;
 public enum Hero {
 
 
-    MOUNTAIN_HERO_MALE("Marko The Great",110,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, "Punch"),
+    MOUNTAIN_HERO_MALE("Marko The Great",110,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
 
-    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",95,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, "Punch"),
+    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",95,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
 
-    SEA_HERO_MALE("Marin The Boss",123,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND,100, "Punch"),
+    SEA_HERO_MALE("Marin The Boss",123,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND,100, new HashSet<>()),
 
-    SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, "Slap");
+    SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, new HashSet<>());
 
     public final String name;
     public final int healthPoints;
@@ -32,14 +32,13 @@ public enum Hero {
     put(4, SEA_HERO_FEMALE);
         }};
 
-    private Hero(String name, int healthPoints, SuperAbility ability, Location location,int coins, String defaultEquipment) {
+    private Hero(String name, int healthPoints, SuperAbility ability, Location location, int coins, Set <String> equipmentSet ) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.ability = ability;
         this.location = location;
         this.coins = coins;
-        equipmentSet.add(defaultEquipment);
-
+        this.equipmentSet = equipmentSet;
     }
 
     public static void printMountainHeroInfo() {
