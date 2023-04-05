@@ -1,6 +1,15 @@
 package game;
 
 public class InstructionHelper {
+    public static void printMenu() {
+        System.out.println("1. Go to the Market");
+        System.out.println("2. Check inventory");
+        System.out.println("3. Take resources");
+        System.out.println("4. Increase your skills");
+        System.out.println("5. Take your journey");
+        System.out.println("< - > < - > < - >");
+    }
+
     public static void shopInstructions() {
         System.out.println("1. Sell resources");
         System.out.println("2. Buy equipment"); // weapons and equipments
@@ -20,6 +29,7 @@ public class InstructionHelper {
     }
 
     public static void takeResources() {
+        //Fill with StoryTelling
     }
 
     public static void increaseYourSkills() {
@@ -37,14 +47,5 @@ public class InstructionHelper {
         System.out.println("6. Back to the main menu");
         System.out.println("< - > < - > < - >");
 
-    }
-
-    public static void printMenu() {
-        System.out.println("1. Go to the Market");
-        System.out.println("2. Check inventory");
-        System.out.println("3. Take resources");
-        System.out.println("4. Increase your skills");
-        System.out.println("5. Take your journey");
-        System.out.println("< - > < - > < - >");
     }
 }

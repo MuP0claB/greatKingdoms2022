@@ -2,7 +2,7 @@ package game;
 
 import java.util.Scanner;
 
-public class Shop {
+public class Market {
     public static int sellResource(Resources resource) {
 
         if (resource.getQuantity() > 0) {
@@ -39,7 +39,7 @@ public class Shop {
                 InstructionHelper.printShopEquipment();
                 break;
         }
-        Game.shop();
+        Game.market();
     }
 
     private static void buyEquipmentInStore(String equipment, int price) {
@@ -50,7 +50,7 @@ public class Shop {
                 GameData.currentHero.equipmentSet.add(equipment);
                 GameData.currentHero.coins -= price;
                 System.out.println("You bought " + equipment + ". Now you have " + GameData.currentHero.coins + " coins.");
-                System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
+                System.out.println("Your equipment is: " + GameData.currentHero.equipmentSet);
             } else {
                 System.out.println("You don't have enough money to buy " + equipment);
             }

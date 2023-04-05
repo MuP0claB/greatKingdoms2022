@@ -40,13 +40,14 @@ public class Game {
         int menuChoice = scanner.nextInt();
         switch (menuChoice) {
             case 1:
-                shop();
+                market();
                 break;
             case 2:
                 checkInventory();
+                mainMenu();
                 break;
             case 3:
-                takeResources();
+                takeResources(); // Пасивно или активно действие.
                 break;
             case 4:
                 increaseYourSkills();
@@ -59,18 +60,18 @@ public class Game {
         }
     }
 
-    public static void shop() {
+    public static void market() {
         InstructionHelper.shopInstructions();
         Scanner scanner = new Scanner(System.in);
         int menuChoice = scanner.nextInt();
 
         switch (menuChoice) {
             case 1:
-                GameData.currentHero.coins += Shop.sellResource(GameData.currentHero.getResource());
+                GameData.currentHero.coins += Market.sellResource(GameData.currentHero.getResource());
                 System.out.println(("Your current coins:" + GameData.currentHero.coins));
                 break;
             case 2:
-                Shop.buyEquipment();
+                Market.buyEquipment();
                 break;
             case 3:
                 mainMenu();
@@ -79,8 +80,15 @@ public class Game {
     }
 
     public static void checkInventory() {
-        System.out.println("go back to the main menu");
+        //Name,HP,SuperAbility,Location,Coins,Equipment,
+        System.out.println(GameData.currentHero.name);
+        System.out.println(GameData.currentHero.healthPoints);
+        System.out.println(GameData.currentHero.coins);
+        System.out.println(GameData.currentHero.ability);
+        System.out.println(GameData.currentHero.equipmentSet);
+        System.out.println(GameData.currentHero.getResource().getQuantity());
     }
+
 
     public static void takeResources() {
         GameData.currentHero.getResource().setQuantity(GameData.currentHero.getResource().getQuantity() + 1);
