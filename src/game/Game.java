@@ -10,8 +10,6 @@ public class Game {
         makeHeroChoice();
 
     }
-
-
     public static void makeHeroChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your Hero:");
@@ -85,6 +83,9 @@ public class Game {
 
     public static void checkInventory() {
         String[] headers = {"", "Name", "HP", "Monster HP", "Equipment", "Coins"};
+        String[][] data = {
+                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location), playerWeapon, String.valueOf(medicine), String.valueOf(numberOfRabbits), String.valueOf(numberOfTrees), goldenKey ? "yes" : "no", caveKey ? "yes" : "no", String.valueOf(playerMoney)}};
+
 //        System.out.println(GameData.currentHero.name);
 //        System.out.println(GameData.currentHero.healthPoints);
 //        System.out.println(GameData.currentHero.coins);
