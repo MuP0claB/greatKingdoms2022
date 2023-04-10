@@ -7,7 +7,7 @@ public class InstructionHelper {
         System.out.println("3. Take resources");
         System.out.println("4. Increase your skills");
         System.out.println("5. Take your journey");
-        System.out.println("< - > < - > < - >");
+        System.err.println("< - > < - > < - > < - >");
     }
 
     public static void shopInstructions() {
@@ -15,7 +15,7 @@ public class InstructionHelper {
         System.out.println("2. Buy equipment"); // weapons and equipments
         System.out.println("3. Back to the main menu");
         System.out.println("Please choose between 1 & 3 - shop actions");
-        System.out.println("< - > < - > < - >");
+        System.err.println("< - > < - > < - > < - >");
     }
 
     public static void printShopEquipment(){
@@ -25,7 +25,7 @@ public class InstructionHelper {
         System.out.println("4. Gun - 50 coins.");
         System.out.println("5. Potion - 30 coins."); // increase hero hp with 20%
         System.out.println("Please select between 1 & 5 to choose your equipment - shop ");
-        System.out.println("< - > < - > < - >");
+        System.err.println("< - > < - > < - > < - >");
     }
 
     public static void takeResources() {
@@ -35,7 +35,7 @@ public class InstructionHelper {
     public static void increaseYourSkills() {
         System.out.println("1. Increase your skills");
         System.out.println("2. Back to the main menu");
-        System.out.println("< - > < - > < - >");
+        System.err.println("< - > < - > < - > < - >");
     }
 
     public static void missionOptions() {
@@ -45,7 +45,7 @@ public class InstructionHelper {
         System.out.println("4. Solve the mystery");
         System.out.println("5. Fight with the hero of another empire");
         System.out.println("6. Back to the main menu");
-        System.out.println("< - > < - > < - >");
+        System.err.println("< - > < - > < - > < - >");
 
     }
 }

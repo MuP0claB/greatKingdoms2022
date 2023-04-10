@@ -1,5 +1,7 @@
 package game;
 
+import com.github.freva.asciitable.AsciiTable;
+
 import java.util.Scanner;
 
 public class Game {
@@ -69,6 +71,7 @@ public class Game {
             case 1:
                 GameData.currentHero.coins += Market.sellResource(GameData.currentHero.getResource());
                 System.out.println(("Your current coins:" + GameData.currentHero.coins));
+                market();
                 break;
             case 2:
                 Market.buyEquipment();
@@ -77,16 +80,18 @@ public class Game {
                 mainMenu();
                 break;
         }
+        mainMenu();
     }
 
     public static void checkInventory() {
-        //Name,HP,SuperAbility,Location,Coins,Equipment,
-        System.out.println(GameData.currentHero.name);
-        System.out.println(GameData.currentHero.healthPoints);
-        System.out.println(GameData.currentHero.coins);
-        System.out.println(GameData.currentHero.ability);
-        System.out.println(GameData.currentHero.equipmentSet);
-        System.out.println(GameData.currentHero.getResource().getQuantity());
+        String[] headers = {"", "Name", "HP", "Monster HP", "Equipment", "Coins"};
+//        System.out.println(GameData.currentHero.name);
+//        System.out.println(GameData.currentHero.healthPoints);
+//        System.out.println(GameData.currentHero.coins);
+//        System.out.println(GameData.currentHero.ability);
+//        System.out.println(GameData.currentHero.equipmentSet);
+//        System.out.println(GameData.currentHero.getResource().getQuantity());
+
     }
 
 
