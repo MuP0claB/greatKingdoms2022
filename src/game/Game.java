@@ -82,9 +82,9 @@ public class Game {
     }
 
     public static void checkInventory() {
-        String[] headers = {"", "Name", "HP", "Monster HP", "Equipment", "Coins", "Resources"};
+        String[] headers = {"", "Name", "HP",  "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
         String[][] data = {
-                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResource().getQuantity())}};
+                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints),String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResource().getQuantity())}};
         System.out.println(AsciiTable.getTable(headers, data));
 //        System.out.println(GameData.currentHero.name);
 //        System.out.println(GameData.currentHero.healthPoints);

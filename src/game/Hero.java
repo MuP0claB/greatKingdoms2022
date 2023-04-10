@@ -18,7 +18,7 @@ public enum Hero {
     SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, new HashSet<>());
 
     public final String name;
-    public final int healthPoints;
+    public  int healthPoints;
     public final SuperAbility ability;
     public  Set<String> equipmentSet = new HashSet<>(); //избираме сет за да спестим проверката (имаме право само по 1)
     public final Location location;

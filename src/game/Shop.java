@@ -84,10 +84,14 @@ public class Shop {
                     System.out.println("You already have Potion");
                 } else {
                     if (GameData.currentHero.coins >= 30) {
-                        GameData.currentHero.equipmentSet.add("Potion");
                         GameData.currentHero.coins -= 30;
+
+                        if(GameData.currentHero.healthPoints < 80){
+                            GameData.currentHero.healthPoints += 20;
+                        } else {
+                            GameData.currentHero.healthPoints = 100;
+                        }
                         System.out.println("You bought Potion. Now you have " + GameData.currentHero.coins + " coins.");
-                        System.out.println("Your weapon is: " + GameData.currentHero.equipmentSet);
                     } else {
                         System.out.println("You don't have enough money to buy Potion");
                     }

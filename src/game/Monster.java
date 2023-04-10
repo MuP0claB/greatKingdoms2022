@@ -16,4 +16,8 @@ public enum Monster {
     public int getMonsterPoints() {
         return monsterPoints;
     }
+
+    public String getName() {
+        return name;
+    }
 }

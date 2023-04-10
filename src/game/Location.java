@@ -19,4 +19,5 @@ public enum Location {
     public int getMonsterPoints() {
         return monster.getMonsterPoints();
     }
+    public String getMonsterName(){ return monster.getName();}
 }
