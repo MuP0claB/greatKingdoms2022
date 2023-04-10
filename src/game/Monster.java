@@ -5,11 +5,15 @@ public enum Monster {
     MOUNTAIN_MONSTER ("Sasquatch", 100),
     SEA_MONSTER("Dagon", 100);
 
-    public final String name;
-    public int monsterPoints;
+    private final String name;
+    private int monsterPoints;
 
     Monster(String name, int monsterPoints) {
         this.name = name;
         this.monsterPoints = monsterPoints;
+    }
+
+    public int getMonsterPoints() {
+        return monsterPoints;
     }
 }

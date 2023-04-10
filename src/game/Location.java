@@ -16,7 +16,7 @@ public enum Location {
         return resource;
     }
 
-    public Monster getMonsterHealthPoints() {
-        return monster;
+    public int getMonsterPoints() {
+        return monster.getMonsterPoints();
     }
 }
