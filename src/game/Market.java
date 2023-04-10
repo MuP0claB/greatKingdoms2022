@@ -33,7 +33,7 @@ public class Market {
                 buyEquipmentInStore("Gun", 50);
                 break;
             case 5:
-                buyEquipmentInStore("Potion", 30);
+                buyEquipmentInStore("Potion", 50);
                 break;
             default:
                 InstructionHelper.printShopEquipment();
@@ -45,6 +45,20 @@ public class Market {
     private static void buyEquipmentInStore(String equipment, int price) {
         if (GameData.currentHero.equipmentSet.contains(equipment)) {
             System.out.println("You already have " + equipment);
+        } else if (equipment.equals("Potion")) {
+            if (GameData.currentHero.coins >= 50) {
+                GameData.currentHero.coins -= 50;
+
+                if (GameData.currentHero.healthPoints < 80) {
+                    GameData.currentHero.healthPoints += 20;
+                } else {
+                    GameData.currentHero.healthPoints = 100;
+                }
+                System.out.println("You bought Potion. Now you have " + GameData.currentHero.coins + " coins.");
+                System.out.println("Now you have " + GameData.currentHero.healthPoints + " HP.");
+            } else {
+                System.out.println("You don't have enough money to buy Potion");
+            }
         } else {
             if (GameData.currentHero.coins >= price) {
                 GameData.currentHero.equipmentSet.add(equipment);

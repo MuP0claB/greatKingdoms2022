@@ -9,13 +9,13 @@ import java.util.Set;
 public enum Hero {
 
 
-    MOUNTAIN_HERO_MALE("Marko The Great",110,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
+    MOUNTAIN_HERO_MALE("Marko The Great",90,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
 
-    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",95,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
+    MOUNTAIN_HERO_FEMALE("Jeana D'Arc",100,SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE,100, new HashSet<>()),
 
-    SEA_HERO_MALE("Marin The Boss",123,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND,100, new HashSet<>()),
+    SEA_HERO_MALE("Marin The Boss",100,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND,100, new HashSet<>()),
 
-    SEA_HERO_FEMALE("Arielle Little Mermaid",101,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, new HashSet<>());
+    SEA_HERO_FEMALE("Arielle Little Mermaid",100,SuperAbility.CATCH_THOUGHTS, Location.THE_FLOATING_ISLAND, 100, new HashSet<>());
 
     public final String name;
     public  int healthPoints;
