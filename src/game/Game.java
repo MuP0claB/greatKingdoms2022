@@ -64,7 +64,7 @@ public class Game {
 
         switch (menuChoice) {
             case 1:
-                GameData.currentHero.coins += Market.sellResource(GameData.currentHero.getResource());
+                GameData.currentHero.coins += Market.sellResource(GameData.currentHero.getResourceByCurrentHero());
                 System.out.println(("Your current coins:" + GameData.currentHero.coins));
                 market();
                 break;
@@ -84,7 +84,7 @@ public class Game {
     public static void checkInventory() {
         String[] headers = {"", "Name", "Your HP", "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
         String[][] data = {
-                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResource().getQuantity())}};
+                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity())}};
         System.out.println(AsciiTable.getTable(headers, data));
     }
 
@@ -100,9 +100,9 @@ public class Game {
 
     public static void takeResources() {
 
-        GameData.currentHero.getResource().setQuantity(GameData.currentHero.getResource().getQuantity() + 1); // switch (resources)
+        GameData.currentHero.getResourceByCurrentHero().setQuantity(GameData.currentHero.getResourceByCurrentHero().getQuantity() + 1); // switch (resources)
         GameData.currentHero.healthPoints -= 10;
-        System.out.println("Successfully increase " + GameData.currentHero.getResource().name().toLowerCase());
+        System.out.println("Successfully increase " + GameData.currentHero.getResourceByCurrentHero().name().toLowerCase());
 
     }
 
