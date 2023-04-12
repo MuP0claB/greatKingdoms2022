@@ -35,9 +35,12 @@ public class Market {
             case 5:
                 buyEquipmentInStore("Potion", 50);
                 break;
-            default:
-                InstructionHelper.printShopEquipment();
+            case 6:
+                Game.market();
                 break;
+            default:
+                System.err.println("Invalid choice");
+                buyEquipment();
         }
         Game.market();
     }

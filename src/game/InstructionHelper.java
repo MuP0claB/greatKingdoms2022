@@ -24,7 +24,8 @@ public class InstructionHelper {
         System.out.println("3. Knife - 40 coins.");
         System.out.println("4. Gun - 50 coins.");
         System.out.println("5. Potion - 50 coins."); // increase hero hp with 20%
-        System.out.println("Please select between 1 & 5 to choose your equipment - shop ");
+        System.out.println("6. Back. ");
+        System.out.println("Please select between 1 & 6 to choose your equipment - shop ");
         System.err.println("< - > < - > < - > < - >");
     }
 

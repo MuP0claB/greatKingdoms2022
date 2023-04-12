@@ -77,8 +77,11 @@ public class Game {
             case 3:
                 mainMenu();
                 break;
+            default:
+                System.err.println("Invalid choice");
+               market();
         }
-        mainMenu();
+       mainMenu();
     }
 
     public static void checkInventory() {
