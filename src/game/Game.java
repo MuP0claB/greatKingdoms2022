@@ -10,24 +10,21 @@ public class Game {
         makeHeroChoice();
 
     }
+
     public static void makeHeroChoice() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose your Hero:");
-        System.out.println("1. Marko The Great   / MOUNTAIN HERO / ");
-        System.out.println("2. Jeana D'Arc   / MOUNTAIN HERO /");
-        System.out.println("3. Marin The Boss   / SEA HERO /");
-        System.out.println("4. Arielle Little Mermaid   / SEA HERO /");
+        InstructionHelper.printHeroesNames();
 
         int heroChoice = 0;
-        while ((heroChoice < 1) || (heroChoice > 4)) {
-            System.out.println("Please choose between 1 & 4 ");
+        while ((heroChoice < 1) || (heroChoice > 3)) {
+            System.out.println("Please choose between 1 & 3 ");
             try {
                 heroChoice = scanner.nextInt();
                 GameData.currentHero = Hero.heroChoise.get(heroChoice);
-                System.out.println("You have chosen  " + GameData.currentHero.name);
+                InstructionHelper.printHeroInfo(GameData.currentHero);
             } catch (Exception e) {
                 scanner.nextLine();
-                System.out.println(" Input only numbers ");
+                System.err.println("Input only VALID NUMBERS");
             }
         }
         mainMenu();
@@ -79,19 +76,27 @@ public class Game {
                 break;
             default:
                 System.err.println("Invalid choice");
-               market();
+                market();
         }
-       mainMenu();
+        mainMenu();
     }
 
     public static void checkInventory() {
-        String[] headers = {"", "Name", "Your HP",  "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
+        String[] headers = {"", "Name", "Your HP", "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
         String[][] data = {
-                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints),String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResource().getQuantity())}};
+                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResource().getQuantity())}};
         System.out.println(AsciiTable.getTable(headers, data));
-
     }
 
+//    private void checkInput(Runnable function) {
+//        String input = scanner.next();
+//        try {
+//            GameData.setChoice(Integer.valueOf(input));
+//        } catch (NumberFormatException e) {
+//            System.err.println("\nPlease enter only numbers!");
+//            function.run();
+//        }
+//    }
 
     public static void takeResources() {
 
@@ -109,32 +114,19 @@ public class Game {
         InstructionHelper.missionOptions();
         Scanner scanner = new Scanner(System.in);
         int missionChoice = scanner.nextInt();
-        System.out.println("Please choose between 1 & 5 ");
+        System.out.println("Please choose between 1 & 6 ");
         switch (missionChoice) {
-            case 1:
-                meetTheWizzard();
-                break;
-            case 2:
-                guessTheRiddle();
-                break;
-            case 3:
-                fightTheMonster();
-                break;
-            case 4:
-                solveTheMystery();
-                break;
-            case 5:
-                fightWithAnotherEmpire();
-                break;
-            case 6:
-                mainMenu();
-                break;
-            default:
-                chooseYourMission();
+            case 1 -> meetTheWizard();
+            case 2 -> guessTheRiddle();
+            case 3 -> fightTheMonster();
+            case 4 -> solveTheMystery();
+            case 5 -> fightWithAnotherEmpire();
+            case 6 -> mainMenu();
+            default -> chooseYourMission();
         }
     }
 
-    public static void meetTheWizzard() {
+    public static void meetTheWizard() {
     }
 
     public static void guessTheRiddle() {
