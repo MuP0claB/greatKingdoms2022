@@ -108,6 +108,16 @@ public class Game {
 
     public static void increaseYourSkills() {
         InstructionHelper.increaseYourSkills();
+
+        if (GameData.currentHero.name.equals("Marko The Great")) {
+            SuperAbility.HYPER_VENTILATION.increaseAbility();
+        } else if (GameData.currentHero.name.equals("Marin The Boss")) {
+            SuperAbility.THUNDER_BOLT.increaseAbility();
+        } else {
+            SuperAbility.GETTING_INVISIBLE.increaseAbility();
+        }
+        mainMenu();
+//        TODO To fix this method  !!!
     }
 
     public static void chooseYourMission() {
