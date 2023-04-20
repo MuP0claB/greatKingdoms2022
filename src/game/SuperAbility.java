@@ -6,14 +6,16 @@ public enum SuperAbility {
     GETTING_INVISIBLE(1, 20);
     private int level;
     private int increasePoints;
-  private String name;
 
-    SuperAbility () {}
+    SuperAbility() {
+    }
+
     SuperAbility(int level, int increasePoints) {
         this.level = level;
         this.increasePoints = increasePoints;
 
     }
+
     public int getLevel() {
         return level;
     }
@@ -26,33 +28,36 @@ public enum SuperAbility {
         return increasePoints;
     }
 
-    public void setIncreasePoints(int increasePoints) {
-        GameData.currentHero.healthPoints += this.increasePoints;
-    }
-
     public void increaseAbility() {
-        if (GameData.currentHero.ability.equals(HYPER_VENTILATION)) {
-            if (this.level < 3) {
-                this.level++;
-                GameData.currentHero.healthPoints += 20;
-                System.out.println("Your HP is now " + GameData.currentHero.healthPoints);
-            } else {
-                System.out.println("You already reached the maximum level of the ability");
-            }
-        } else if (GameData.currentHero.ability.equals(THUNDER_BOLT)) {
-            if (this.level < 3) {
-                this.level++;
-                GameData.currentHero.defense += 20;
-            } else {
-                System.out.println("You already reached the maximum level of the ability");
-            }
-        } else if (GameData.currentHero.ability.equals(GETTING_INVISIBLE)) {
-            if (this.level < 3) {
-                this.level++;
-                GameData.currentHero.attack += 20;
-            } else {
-                System.out.println("You already reached the maximum level of the ability");
-            }
+        switch (GameData.currentHero.ability) {
+            case HYPER_VENTILATION:
+                if (this.level < 3) {
+                    this.level++;
+                    GameData.currentHero.healthPoints += increasePoints;
+                    System.out.println("Your current HP is " + GameData.currentHero.healthPoints);
+                } else {
+                    System.out.println("You already reached the maximum level of the ability");
+                }
+                break;
+            case THUNDER_BOLT:
+                if (this.level < 3) {
+                    this.level++;
+                    GameData.currentHero.defense += increasePoints;
+                    System.out.println("Your current defense is " + GameData.currentHero.defense);
+                } else {
+                    System.out.println("You already reached the maximum level of the ability");
+                }
+                break;
+            case GETTING_INVISIBLE:
+                if (this.level < 3) {
+                    this.level++;
+                    GameData.currentHero.attack += increasePoints;
+                    System.out.println("Your current attack is " + GameData.currentHero.attack);
+                } else {
+                    System.out.println("You already reached the maximum level of the ability");
+                }
+                break;
         }
+
     }
 }

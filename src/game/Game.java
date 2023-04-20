@@ -17,7 +17,6 @@ public class Game {
 
         int heroChoice = 0;
         while ((heroChoice < 1) || (heroChoice > 3)) {
-            System.out.println("Please choose between 1 & 3 ");
             try {
                 heroChoice = scanner.nextInt();
                 GameData.currentHero = Hero.heroChoise.get(heroChoice);
@@ -33,7 +32,6 @@ public class Game {
     public static void mainMenu() {
         Scanner scanner = new Scanner(System.in);
         InstructionHelper.printMenu();
-        System.out.println("Please choose between 1 & 5 - main menu");
         int menuChoice = scanner.nextInt();
         switch (menuChoice) {
             case 1:
@@ -41,7 +39,6 @@ public class Game {
                 break;
             case 2:
                 checkInventory();
-                mainMenu();
                 break;
             case 3:
                 takeResources(); // Пасивно или активно действие.
@@ -65,7 +62,7 @@ public class Game {
         switch (menuChoice) {
             case 1:
                 GameData.currentHero.coins += Market.sellResource(GameData.currentHero.getResourceByCurrentHero());
-                System.out.println(("Your current coins:" + GameData.currentHero.coins));
+                System.out.println(("Your current coins: " + GameData.currentHero.coins));
                 market();
                 break;
             case 2:
@@ -75,7 +72,7 @@ public class Game {
                 mainMenu();
                 break;
             default:
-                System.err.println("Invalid choice");
+                System.err.println("Invalid choice!");
                 market();
         }
         mainMenu();
@@ -86,6 +83,7 @@ public class Game {
         String[][] data = {
                 {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity())}};
         System.out.println(AsciiTable.getTable(headers, data));
+        mainMenu();
     }
 
 //    private void checkInput(Runnable function) {
@@ -102,22 +100,35 @@ public class Game {
 
         GameData.currentHero.getResourceByCurrentHero().setQuantity(GameData.currentHero.getResourceByCurrentHero().getQuantity() + 1); // switch (resources)
         GameData.currentHero.healthPoints -= 10;
-        System.out.println("Successfully increase " + GameData.currentHero.getResourceByCurrentHero().name().toLowerCase());
-
+        System.out.println("\033[32mSuccessfully\033[0m  " + GameData.currentHero.getResourceByCurrentHero().name().toLowerCase());
+        System.err.println("< - > < - > < - > < - >");
+        mainMenu();
     }
 
     public static void increaseYourSkills() {
-        InstructionHelper.increaseYourSkills();
+        InstructionHelper.increaseYourSkillsMenu();
 
-        if (GameData.currentHero.name.equals("Marko The Great")) {
-            SuperAbility.HYPER_VENTILATION.increaseAbility();
-        } else if (GameData.currentHero.name.equals("Marin The Boss")) {
-            SuperAbility.THUNDER_BOLT.increaseAbility();
-        } else {
-            SuperAbility.GETTING_INVISIBLE.increaseAbility();
+        Scanner scanner = new Scanner(System.in);
+
+        int choice = scanner.nextInt();
+
+        if(choice ==1){
+            if(GameData.currentHero.coins > 100){
+                GameData.currentHero.coins -= 100;
+                if (GameData.currentHero.name.equals("Marko The Great")) {
+                    SuperAbility.HYPER_VENTILATION.increaseAbility();
+                } else if (GameData.currentHero.name.equals("Marin The Boss")) {
+                    SuperAbility.THUNDER_BOLT.increaseAbility();
+                } else {
+                    SuperAbility.GETTING_INVISIBLE.increaseAbility();
+                }
+            } else{
+                System.err.println("You don't have enough coins.");
+            }
+        } else{
+            mainMenu();
         }
         mainMenu();
-//        TODO To fix this method  !!!
     }
 
     public static void chooseYourMission() {

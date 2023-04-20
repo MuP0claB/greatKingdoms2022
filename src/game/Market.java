@@ -7,12 +7,15 @@ public class Market {
 
         if (resource.getQuantity() > 0) {
             resource.setQuantity(resource.getQuantity() - 1);
-            System.out.println(resource.name().toLowerCase() + " successfully sold");
+            System.out.println(resource.name().toLowerCase() + " \033[32msuccessfully\033[0m sold");
+            System.err.println("< - > < - > < - > < - >");
             return 10;
         } else {
             System.err.println("Not enough resources");
+            System.err.println("< - > < - > < - > < - >");
             return 0;
         }
+
     }
 
     public static void buyEquipment() {

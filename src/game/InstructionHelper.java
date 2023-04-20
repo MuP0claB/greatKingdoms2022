@@ -7,6 +7,7 @@ public class InstructionHelper {
         System.out.println("3. Take resources");
         System.out.println("4. Increase your skills");
         System.out.println("5. Take your journey");
+        System.out.println("Please choose between 1 & 5 - main menu");
         System.err.println("< - > < - > < - > < - >");
     }
 
@@ -34,10 +35,10 @@ public class InstructionHelper {
         // TODO: Fill with StoryTelling
     }
 
-    public static void increaseYourSkills() {
+    public static void increaseYourSkillsMenu() {
         System.out.println("1. Increase your skills");
-        // TODO: Brainstorming about SKILLS
         System.out.println("2. Back to the main menu");
+        System.out.println("You need 100 coins to increase your skill.");
         System.err.println("< - > < - > < - > < - >");
     }
 
@@ -54,6 +55,7 @@ public class InstructionHelper {
 
     public static void printHeroInfo(Hero hero) {
         System.out.println("You have chosen " + hero.name + ", has " + hero.healthPoints + " HP, and his super ability is " + hero.ability + ".");
+        System.err.println("< - > < - > < - > < - >");
     }
 
     public static void printHeroesNames() {
@@ -61,5 +63,7 @@ public class InstructionHelper {
         System.out.println("1. Marko The Great   / MOUNTAIN HERO / ");
         System.out.println("2. Marin The Boss   / SEA HERO /");
         System.out.println("3. Mad Max  / LA AREA HERO /");
+        System.out.println("Please choose between 1 & 3 ");
+        System.err.println("< - > < - > < - > < - >");
     }
 }
