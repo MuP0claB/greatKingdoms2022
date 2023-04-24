@@ -5,7 +5,7 @@ public class InstructionHelper {
         System.out.println("1. Go to the Market");
         System.out.println("2. Check inventory");
         System.out.println("3. Take resources");
-        System.out.println("4. Increase your skills");
+        System.out.println("4. Meet your GURU");
         System.out.println("5. Take your journey");
         System.out.println("Please choose between 1 & 5 - main menu");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
@@ -36,6 +36,7 @@ public class InstructionHelper {
     }
 
     public static void increaseYourSkillsMenu() {
+        System.out.println("Welcome to your GURU !!!");
         System.out.println("1. Increase your skills");
         System.out.println("2. Back to the main menu");
         System.out.println("You need 100 coins to increase your skill.");
@@ -43,14 +44,13 @@ public class InstructionHelper {
     }
 
     public static void missionOptions() {
-        System.out.println("1. Meet the Wizard");
-        System.out.println("2. Guess the riddle");
-        System.out.println("3. Fight with the mythical monster");
-        System.out.println("4. Solve the mystery");
-        System.out.println("5. Fight with the hero of another empire");
-        System.out.println("6. Back to the main menu");
+        System.out.println("1. Meet the Wizard"); // Магьосникът ти задава 3 въпроса от Стани Богат ;)
+        System.out.println("2. Fight with the mythical monster"); // Roll The Dice <-> Героят и чудовището се редуват в хвърлянето на заровете
+         // Math.random() и се бият за надмощие
+        System.out.println("3. Guess The Number !!!"); //
+        // Резервен Вариант : 4. Solve The Mystery <-> Намаляват се с 20 т.
+        System.out.println("4. Back to the main menu");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
-
     }
 
     public static void printHeroInfo(Hero hero) {

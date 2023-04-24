@@ -86,22 +86,18 @@ public class Game {
         mainMenu();
     }
 
-//    private void checkInput(Runnable function) {
-//        String input = scanner.next();
-//        try {
-//            GameData.setChoice(Integer.valueOf(input));
-//        } catch (NumberFormatException e) {
-//            System.err.println("\nPlease enter only numbers!");
-//            function.run();
-//        }
-//    }
-
     public static void takeResources() {
 
-        GameData.currentHero.getResourceByCurrentHero().setQuantity(GameData.currentHero.getResourceByCurrentHero().getQuantity() + 1); // switch (resources)
-        GameData.currentHero.healthPoints -= 10;
-        System.out.println("\033[32mSuccessfully\033[0m  " + GameData.currentHero.getResourceByCurrentHero().name().toLowerCase());
-        System.err.println("< - > < - > < - > < - >");
+        if (GameData.currentHero.healthPoints > 10 && GameData.currentHero.getResourceByCurrentHero().getQuantity() < 3) {
+            GameData.currentHero.getResourceByCurrentHero().setQuantity(GameData.currentHero.getResourceByCurrentHero().getQuantity() + 1); // switch (resources)
+            GameData.currentHero.healthPoints -= 10;
+            System.out.println("\033[32mSuccessfully added\033[0m  " + GameData.currentHero.getResourceByCurrentHero().name().toLowerCase());
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+        } else if (GameData.currentHero.healthPoints <= 10) {
+            System.out.println("Your " + GameData.currentHero.healthPoints + " HP are not enough to take resource.");
+        } else if (GameData.currentHero.getResourceByCurrentHero().getQuantity() >= 3) {
+            System.out.println("\033[31mYou can't take more than 3 !\033[0m");
+        }
         mainMenu();
     }
 
@@ -112,8 +108,8 @@ public class Game {
 
         int choice = scanner.nextInt();
 
-        if(choice ==1){
-            if(GameData.currentHero.coins >= 100){
+        if (choice == 1) {
+            if (GameData.currentHero.coins >= 100) {
                 GameData.currentHero.coins -= 100;
                 if (GameData.currentHero.name.equals("Marko The Great")) {
                     SuperAbility.HYPER_VENTILATION.increaseAbility();
@@ -122,10 +118,10 @@ public class Game {
                 } else {
                     SuperAbility.GETTING_INVISIBLE.increaseAbility();
                 }
-            } else{
-                System.err.println("You don't have enough coins.");
+            } else {
+                System.out.println("\033[31mYou don't have enough coins.\033[0m");
             }
-        } else{
+        } else {
             mainMenu();
         }
         mainMenu();
@@ -138,11 +134,9 @@ public class Game {
         System.out.println("Please choose between 1 & 6 ");
         switch (missionChoice) {
             case 1 -> meetTheWizard();
-            case 2 -> guessTheRiddle();
-            case 3 -> fightTheMonster();
-            case 4 -> solveTheMystery();
-            case 5 -> fightWithAnotherEmpire();
-            case 6 -> mainMenu();
+            case 2 -> fightTheMonster();
+            case 3 -> solveTheMystery();
+            case 4 -> mainMenu();
             default -> chooseYourMission();
         }
     }
@@ -150,16 +144,10 @@ public class Game {
     public static void meetTheWizard() {
     }
 
-    public static void guessTheRiddle() {
-    }
-
     public static void fightTheMonster() {
     }
 
     public static void solveTheMystery() {
-    }
-
-    public static void fightWithAnotherEmpire() {
     }
 }
 
