@@ -9,11 +9,11 @@ import java.util.Set;
 public enum Hero {
 
 
-    MOUNTAIN_HERO("Marko The Great", 100, SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE, 0, new HashSet<>(),0,0),
+    MOUNTAIN_HERO("Marko The Great", 120, SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE, 100, new HashSet<>(),0,0),
 
-    SEA_HERO("Marin The Boss", 100, SuperAbility.THUNDER_BOLT, Location.THE_FLOATING_ISLAND, 0, new HashSet<>(),0, 0),
+    SEA_HERO("Marin The Boss", 100, SuperAbility.THUNDER_BOLT, Location.THE_FLOATING_ISLAND, 100, new HashSet<>(),0, 20),
 
-    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.THE_FLOATING_ISLAND, 0, new HashSet<>(), 0,0);
+    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.THE_FLOATING_ISLAND, 100, new HashSet<>(), 20,0);
 
     public final String name;
     public int healthPoints;

@@ -7,8 +7,6 @@ public enum SuperAbility {
     private int level;
     private int increasePoints;
 
-    SuperAbility() {
-    }
 
     SuperAbility(int level, int increasePoints) {
         this.level = level;
@@ -31,33 +29,27 @@ public enum SuperAbility {
     public void increaseAbility() {
         switch (GameData.currentHero.ability) {
             case HYPER_VENTILATION:
-                if (this.level < 3) {
-                    this.level++;
-                    GameData.currentHero.healthPoints += increasePoints;
-                    System.out.println("Your current HP is " + GameData.currentHero.healthPoints);
-                } else {
-                    System.out.println("You already reached the maximum level of the ability");
-                }
+                levelUp(GameData.currentHero.healthPoints, "Your current HP is ");
                 break;
             case THUNDER_BOLT:
-                if (this.level < 3) {
-                    this.level++;
-                    GameData.currentHero.defense += increasePoints;
-                    System.out.println("Your current defense is " + GameData.currentHero.defense);
-                } else {
-                    System.out.println("You already reached the maximum level of the ability");
-                }
+                levelUp(GameData.currentHero.attack, "Your current defense is ");
                 break;
             case GETTING_INVISIBLE:
-                if (this.level < 3) {
-                    this.level++;
-                    GameData.currentHero.attack += increasePoints;
-                    System.out.println("Your current attack is " + GameData.currentHero.attack);
-                } else {
-                    System.out.println("You already reached the maximum level of the ability");
-                }
+                levelUp(GameData.currentHero.defense, "Your current attack is ");
                 break;
         }
 
+    }
+
+    private void levelUp(int statsToIncrease, String message) {
+        if (this.level < 3) {
+            this.level++;
+            statsToIncrease += increasePoints;
+            System.out.println(message + statsToIncrease);
+            System.out.println("Your super ability level is " + this.level);
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+        } else {
+            System.out.println("You already reached the maximum level of the ability");
+        }
     }
 }

@@ -113,7 +113,7 @@ public class Game {
         int choice = scanner.nextInt();
 
         if(choice ==1){
-            if(GameData.currentHero.coins > 100){
+            if(GameData.currentHero.coins >= 100){
                 GameData.currentHero.coins -= 100;
                 if (GameData.currentHero.name.equals("Marko The Great")) {
                     SuperAbility.HYPER_VENTILATION.increaseAbility();

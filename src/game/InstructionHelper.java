@@ -8,7 +8,7 @@ public class InstructionHelper {
         System.out.println("4. Increase your skills");
         System.out.println("5. Take your journey");
         System.out.println("Please choose between 1 & 5 - main menu");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     // TODO Create method to handle exceptions
@@ -17,7 +17,7 @@ public class InstructionHelper {
         System.out.println("2. Buy equipment"); // weapons and equipments
         System.out.println("3. Back to the main menu");
         System.out.println("Please choose between 1 & 3 - shop actions");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void printShopEquipment() {
@@ -28,7 +28,7 @@ public class InstructionHelper {
         System.out.println("5. Potion - 50 coins."); // increase hero hp with 20%
         System.out.println("6. Back. ");
         System.out.println("Please select between 1 & 6 to choose your equipment - shop ");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void takeResources() {
@@ -39,7 +39,7 @@ public class InstructionHelper {
         System.out.println("1. Increase your skills");
         System.out.println("2. Back to the main menu");
         System.out.println("You need 100 coins to increase your skill.");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void missionOptions() {
@@ -49,13 +49,13 @@ public class InstructionHelper {
         System.out.println("4. Solve the mystery");
         System.out.println("5. Fight with the hero of another empire");
         System.out.println("6. Back to the main menu");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
 
     }
 
     public static void printHeroInfo(Hero hero) {
         System.out.println("You have chosen " + hero.name + ", has " + hero.healthPoints + " HP, and his super ability is " + hero.ability + ".");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void printHeroesNames() {
@@ -64,6 +64,6 @@ public class InstructionHelper {
         System.out.println("2. Marin The Boss   / SEA HERO /");
         System.out.println("3. Mad Max  / LA AREA HERO /");
         System.out.println("Please choose between 1 & 3 ");
-        System.err.println("< - > < - > < - > < - >");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 }

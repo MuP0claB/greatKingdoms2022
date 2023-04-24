@@ -8,11 +8,11 @@ public class Market {
         if (resource.getQuantity() > 0) {
             resource.setQuantity(resource.getQuantity() - 1);
             System.out.println(resource.name().toLowerCase() + " \033[32msuccessfully\033[0m sold");
-            System.err.println("< - > < - > < - > < - >");
+            System.out.println("\033< - > < - > < - > < - >\033");
             return 10;
         } else {
-            System.err.println("Not enough resources");
-            System.err.println("< - > < - > < - > < - >");
+            System.out.println("\033Not enough resources\033");
+            System.out.println("\033< - > < - > < - > < - >\033");
             return 0;
         }
 
@@ -42,7 +42,7 @@ public class Market {
                 Game.market();
                 break;
             default:
-                System.err.println("Invalid choice");
+                System.out.println("\033Invalid choice\033");
                 buyEquipment();
         }
         Game.market();
