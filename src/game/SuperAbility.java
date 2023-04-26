@@ -46,7 +46,7 @@ public enum SuperAbility {
             this.level++;
             statsToIncrease += increasePoints;
             System.out.println(message + statsToIncrease);
-            System.out.println("Your super ability level is " + this.level);
+            System.out.println("Your super ability level is: " + this.level);
             System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
         } else {
             System.out.println("You already reached the maximum level of the ability");

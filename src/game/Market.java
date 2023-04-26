@@ -7,12 +7,13 @@ public class Market {
 
         if (resource.getQuantity() > 0) {
             resource.setQuantity(resource.getQuantity() - 1);
-            System.out.println(resource.name().toLowerCase() + " \033[32msuccessfully\033[0m sold");
-            System.out.println("\033< - > < - > < - > < - >\033");
+            System.out.println("You " +"\033[32msuccessfully\033[0m sold " + resource.name().toLowerCase());
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
             return 10;
         } else {
-            System.out.println("\033Not enough resources\033");
-            System.out.println("\033< - > < - > < - > < - >\033");
+            System.out.println("\033[31mNot enough resources\033[0m");
+            System.out.println("You current coins: " + GameData.currentHero.coins);
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
             return 0;
         }
 
