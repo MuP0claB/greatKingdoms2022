@@ -135,7 +135,7 @@ public class Game {
         switch (missionChoice) {
             case 1 -> meetTheWizard();
             case 2 -> fightTheMonster();
-            case 3 -> solveTheMystery();
+            case 3 -> guessTheNumber();
             case 4 -> mainMenu();
             default -> chooseYourMission();
         }
@@ -228,7 +228,33 @@ public class Game {
     public static void fightTheMonster() {
     }
 
-    public static void solveTheMystery() {
+    public static void guessTheNumber() {
+        InstructionHelper.instructionsForGuessTheNumberGame();
+        Scanner scanner = new Scanner(System.in);
+        int current = new Random().nextInt(51);
+        boolean isCorrect = false;
+        for (int i = 0; i < 3; i++) {
+            int digit = scanner.nextInt();
+            if (digit == current) {
+                isCorrect = true;
+                break;
+            } else {
+                if (digit > current) {
+                    System.out.println("Too high ! 📈");
+                } else {
+                    System.out.println("Too low ! 📉");
+                }
+            }
+        }
+        if (isCorrect) {
+            System.out.println("You guess THE NUMBER");
+            System.out.println("You've got another piece of Map !");
+            // TODO Increase piecesMap++
+        } else {
+            System.out.println("YOU FAILED ! THE NUMBER IS " + current);
+        }
+        chooseYourMission();
     }
+
 }
 

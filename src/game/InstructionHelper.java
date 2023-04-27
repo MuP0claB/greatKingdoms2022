@@ -81,4 +81,9 @@ public class InstructionHelper {
                 "If you're ready, let's get started!\n");
     }
 
+    public static void instructionsForGuessTheNumberGame() {
+        System.out.println("WELCOME TO OUR NEW TRICKY GAME FOR YOU !!!");
+        System.out.println("You have to guess the right number from 0 to 50, but you have ONLY 3 tries !!!");
+        System.out.println("Enter your number");
+    }
 }

@@ -12,7 +12,7 @@ public enum Hero {
 
     SEA_HERO("Marin The Boss", 100, SuperAbility.THUNDER_BOLT, Location.THE_FLOATING_ISLAND, 100, 0,new HashSet<>(),0, 20),
 
-    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.THE_FLOATING_ISLAND, 100, 0,new HashSet<>(), 20,0);
+    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.LA_AREA_EMPIRE, 100, 0,new HashSet<>(), 20,0);
 
     public final String name;
     public int healthPoints;
