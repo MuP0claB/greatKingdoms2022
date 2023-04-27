@@ -178,6 +178,11 @@ public class Game {
         return question;
     }
     public static void meetTheWizard() {
+        //TODO:
+        //add collection for map pieces
+        // Map - "Meet the Wizard" - boolean(default false)
+        //      - "Guess the number" - boolean(default false)
+        // Set - apply method contains();
         Scanner scanner = new Scanner(System.in);
 
         if (GameData.currentHero.healthPoints <= 10) {
