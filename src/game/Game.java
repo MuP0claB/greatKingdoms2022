@@ -183,6 +183,7 @@ public class Game {
         // Map - "Meet the Wizard" - boolean(default false)
         //      - "Guess the number" - boolean(default false)
         // Set - apply method contains();
+        boolean meetTheWizardKey = false;
         Scanner scanner = new Scanner(System.in);
 
         if (GameData.currentHero.healthPoints <= 10) {
@@ -208,21 +209,31 @@ public class Game {
             for (String s : question) {
                 System.out.println(s);
             }
+             String userInput = scanner.nextLine();
 
-            if (scanner.nextLine().equals(correctAnswer)) {
+            while(!(userInput.equals("a") || userInput.equals("b") || userInput.equals("c"))) {
+                System.out.println("Please enter only valid letters");
+                userInput = scanner.nextLine();
+            }
+
+            if (userInput.equals(correctAnswer)) {
                 correctAnswers++;
+                System.out.println("Your answer is correct!");
+            } else {
+                System.out.println("Your answer is NOT correct!");
             }
         }
 
         if (correctAnswers == 3) {
             System.out.println("Congratulations!");
             // TODO: Add a piece of the map.
+            meetTheWizardKey = true;
         } else {
             System.out.println("Come back when you have learned Java better! \033[31mYou lost 10 HP!\033[0m");
             GameData.currentHero.healthPoints -= 10;
         }
-
         chooseYourMission();
+
     }
 
     public static void fightTheMonster() {
