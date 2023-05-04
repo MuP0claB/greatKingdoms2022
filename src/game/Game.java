@@ -133,9 +133,9 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         int missionChoice = scanner.nextInt();
         switch (missionChoice) {
-            case 1 -> meetTheWizard();
-            case 2 -> fightTheMonster();
-            case 3 -> guessTheNumber();
+            case 1 -> meetTheWizard(GameData.currentHero.heroMapPieces);
+            case 2 -> fightTheMonster(GameData.currentHero.heroMapPieces);
+            case 3 -> guessTheNumber(GameData.currentHero.heroMapPieces);
             case 4 -> mainMenu();
             default -> chooseYourMission();
         }
@@ -177,13 +177,8 @@ public class Game {
         }
         return question;
     }
-    public static void meetTheWizard() {
-        //TODO:
-        //add collection for map pieces
-        // Map - "Meet the Wizard" - boolean(default false)
-        //      - "Guess the number" - boolean(default false)
-        // Set - apply method contains();
-        boolean meetTheWizardKey = false;
+    public static void meetTheWizard(Map<String, Boolean> mapPieces) {
+        //TODO check if the value of mission is true
         Scanner scanner = new Scanner(System.in);
 
         if (GameData.currentHero.healthPoints <= 10) {
@@ -226,8 +221,8 @@ public class Game {
 
         if (correctAnswers == 3) {
             System.out.println("Congratulations!");
-            // TODO: Add a piece of the map.
-            meetTheWizardKey = true;
+            mapPieces.put("Meet the Wizard", true);
+            System.out.println(mapPieces);
         } else {
             System.out.println("Come back when you have learned Java better! \033[31mYou lost 10 HP!\033[0m");
             GameData.currentHero.healthPoints -= 10;
@@ -236,10 +231,11 @@ public class Game {
 
     }
 
-    public static void fightTheMonster() {
+    public static void fightTheMonster(Map<String, Boolean> mapPieces) {
     }
 
-    public static void guessTheNumber() {
+    public static void guessTheNumber(Map<String, Boolean> mapPieces) {
+        //TODO check if the value of mission is true
         InstructionHelper.instructionsForGuessTheNumberGame();
         Scanner scanner = new Scanner(System.in);
         int current = new Random().nextInt(51);
@@ -260,6 +256,7 @@ public class Game {
         if (isCorrect) {
             System.out.println("You guess THE NUMBER");
             System.out.println("You've got another piece of Map !");
+            mapPieces.put("Guess The Number", true);
             // TODO Increase piecesMap++
         } else {
             System.out.println("YOU FAILED ! THE NUMBER IS " + current);
@@ -269,3 +266,7 @@ public class Game {
 
 }
 
+// String -> boolean
+// "Meet The Wizard" -> false;
+// "Guess The Number" = false;
+// "Fight The Monster" -> false;
