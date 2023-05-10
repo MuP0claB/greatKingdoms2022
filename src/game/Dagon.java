@@ -1,6 +1,5 @@
 package game;
 
-public class Dagon extends Monster {
-
+public class Dagon {
 
 }

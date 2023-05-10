@@ -62,7 +62,7 @@ public class InstructionHelper {
     public static void printHeroesNames() {
         System.out.println("Choose your Hero:");
         System.out.println("1. Marko The Great   / MOUNTAIN HERO / ");
-        System.out.println("2. Marin The Boss   / SEA HERO /");
+        System.out.println("2. Triton The Brave   / SEA HERO /");
         System.out.println("3. Mad Max  / LA AREA HERO /");
         System.out.println("Please choose between 1 & 3 ");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
