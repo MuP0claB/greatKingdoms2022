@@ -232,8 +232,7 @@ public class Game {
     }
 
     public static void fightTheMonster(Map<String, Boolean> mapPieces) {
-        Sphinx sphinx = new Sphinx();
-        sphinx.checkMapContent();
+
     }
 
     public static void guessTheNumber(Map<String, Boolean> mapPieces) {
