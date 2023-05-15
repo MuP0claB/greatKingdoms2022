@@ -11,5 +11,10 @@ public class Sphinx extends Monster {
         areMissionsCompleted();
     }
 
+    @Override
+    int monsterDamage() {
+        return 0;
+    }
+
     // TODO ->  Да напишем конкретен метод за Сфинкса в сряда !!!
 }

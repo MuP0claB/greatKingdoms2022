@@ -10,4 +10,9 @@ public class Dagon extends Monster {
     void monsterFightChallenge() {
         areMissionsCompleted();
     }
+
+    @Override
+    int monsterDamage() {
+        return 0;
+    }
 }

@@ -134,7 +134,7 @@ public class Game {
         int missionChoice = scanner.nextInt();
         switch (missionChoice) {
             case 1 -> meetTheWizard(GameData.currentHero.heroMapPieces);
-            case 2 -> fightTheMonster(GameData.currentHero.heroMapPieces);
+            case 2 -> GameData.currentHero.monster.monsterFightChallenge();
             case 3 -> guessTheNumber(GameData.currentHero.heroMapPieces);
             case 4 -> mainMenu();
             default -> chooseYourMission();

@@ -26,6 +26,7 @@ public class Market {
         switch (choice) {
             case 1:
                 buyEquipmentInStore("Armour", 50);
+                //TODO increase defense
                 break;
             case 2:
                 buyEquipmentInStore("Shield", 40);
