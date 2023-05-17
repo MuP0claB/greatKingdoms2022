@@ -9,14 +9,19 @@ public class Sphinx extends Monster {
 
     @Override
     public void monsterFightChallenge() {
-        areMissionsCompleted();
+        //areMissionsCompleted();
 
         while (GameData.currentHero.healthPoints > 0 && this.getMonsterPoints() > 0) {
             GameData.currentHero.healthPoints -= getMonsterDamage();
-
+           decreaseMonsterHealthpoints(getMonsterDamage());
+            System.out.println(GameData.currentHero.healthPoints);
+            System.out.println(GameData.currentHero.monster.getMonsterPoints());
             // TODO check if HP < 30 option for run();
         }
     }
+public int getMonsterPoints(){
+        return super.getMonsterPoints();
+}
 
     // TODO ->  Да напишем конкретен метод за Сфинкса в сряда !!!
 }

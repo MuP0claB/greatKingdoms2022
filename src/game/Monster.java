@@ -64,4 +64,33 @@ public abstract class Monster {
 
         return monsterDamage;
     }
+    public int getHeroDamage() {
+        Random rand = new Random();
+        int heroDamage = 0;
+        switch(currentHero.attack){
+            case 0:
+                heroDamage = rand.nextInt(50,60);
+                break;
+            case 10:
+                heroDamage = rand.nextInt(40,50);
+                break;
+            case 20:
+               heroDamage= rand.nextInt(30,40);
+                break;
+            case 30:
+                heroDamage= rand.nextInt(20,30);
+                break;
+            case 40:
+                heroDamage= rand.nextInt(10,20);
+                break;
+            default:
+                heroDamage = rand.nextInt(1,10);
+
+        }
+      return heroDamage;
+    }
+    public void decreaseMonsterHealthpoints(int heroDamage) {
+        this.monsterPoints -= heroDamage;
+    }
+
 }
