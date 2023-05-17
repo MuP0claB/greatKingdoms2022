@@ -10,8 +10,7 @@ public abstract class Monster {
     private int monsterPoints;
     private int monsterAttack;
     abstract void monsterFightChallenge();
-
-abstract int monsterDamage();
+    
     public Monster(String name, int monsterPoints, int monsterAttack) {
         this.name = name;
         this.monsterPoints = monsterPoints;
