@@ -12,7 +12,8 @@ public class Sphinx extends Monster {
     public void monsterFightChallenge() {
         Scanner scanner = new Scanner(System.in);
         if(!areMissionsCompleted()){
-            //TODO go back in chooseYourMission();
+            System.out.println("You don't have  the  pieces to continue");
+          Game.chooseYourMission();
         }
 
 
@@ -53,7 +54,7 @@ public class Sphinx extends Monster {
         }
     }
 
-    public void optionToRun() {
+   public void optionToRun() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. Continue \n2. Run");
 
