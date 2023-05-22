@@ -7,7 +7,7 @@ public class Market {
 
         if (resource.getQuantity() > 0) {
             resource.setQuantity(resource.getQuantity() - 1);
-            System.out.println("You " +"\033[32msuccessfully\033[0m sold " + resource.name().toLowerCase());
+            System.out.println("You " + "\033[32msuccessfully\033[0m sold " + resource.name().toLowerCase());
             System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
             return 10;
         } else {
@@ -26,16 +26,19 @@ public class Market {
         switch (choice) {
             case 1:
                 buyEquipmentInStore("Armour", 50);
-                //TODO increase defense
+                GameData.currentHero.defense += 20;
                 break;
             case 2:
                 buyEquipmentInStore("Shield", 40);
+                GameData.currentHero.defense += 10;
                 break;
             case 3:
                 buyEquipmentInStore("Knife", 40);
+                GameData.currentHero.attack += 10;
                 break;
             case 4:
                 buyEquipmentInStore("Gun", 50);
+                GameData.currentHero.attack += 20;
                 break;
             case 5:
                 buyEquipmentInStore("Potion", 50);

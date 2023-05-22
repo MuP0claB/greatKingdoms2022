@@ -1,9 +1,9 @@
 package game;
 
 public enum SuperAbility {
-    HYPER_VENTILATION(1, 20),
-    THUNDER_BOLT(1, 20),
-    GETTING_INVISIBLE(1, 20);
+    HYPER_VENTILATION(1, 10),
+    THUNDER_BOLT(1, 10),
+    GETTING_INVISIBLE(1, 10);
     private int level;
     private int increasePoints;
 

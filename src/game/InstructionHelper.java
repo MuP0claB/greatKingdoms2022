@@ -86,4 +86,10 @@ public class InstructionHelper {
         System.out.println("You have to guess the right number from 0 to 50, but you have ONLY 3 tries !!!");
         System.out.println("Enter your number");
     }
+    public static void deadHero(){
+        System.out.println("You are dead! The game is over!");
+    }
+    public static void deadMonster(){
+        System.out.println("Yhe monster is dead! You collect the last piece of map!");
+    }
 }
