@@ -21,8 +21,8 @@ public enum Hero {
     public int attack;
     public Monster monster;
     public Map<String, Boolean> heroMapPieces = new LinkedHashMap<>(){{
-        put("Meet the Wizard" , false);
-        put("Guess the number" , false);
+        put("Meet the Wizard" , true);
+        put("Guess the number" , true);
     }} ;
 
     public static Map<Integer, Hero> heroChoise = new HashMap<>() {{

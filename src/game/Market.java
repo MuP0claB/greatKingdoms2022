@@ -34,11 +34,11 @@ public class Market {
                 break;
             case 3:
                 buyEquipmentInStore("Knife", 40);
-                GameData.currentHero.attack += 10;
+                GameData.currentHero.attack += 15;
                 break;
             case 4:
                 buyEquipmentInStore("Gun", 50);
-                GameData.currentHero.attack += 20;
+                GameData.currentHero.attack += 25;
                 break;
             case 5:
                 buyEquipmentInStore("Potion", 50);

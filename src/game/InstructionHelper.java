@@ -21,10 +21,10 @@ public class InstructionHelper {
     }
 
     public static void printShopEquipment() {
-        System.out.println("1. Armour - 50 coins.");
-        System.out.println("2. Shield - 40 coins."); // increase hero hp with
-        System.out.println("3. Knife - 40 coins.");
-        System.out.println("4. Gun - 50 coins.");
+        System.out.println("1. Armour 🛡 COST: 50 coins. Increase defense: 20 points ");
+        System.out.println("2. Shield 🛡️ - 40 coins. Increase defense: 10 points "); // increase hero hp with
+        System.out.println("3. Knife ⚔🗡️ - 40 coins. Increase attack: 15 points ");
+        System.out.println("4. Gun 🔫- 50 coins. Increase attack: 25 points ");
         System.out.println("5. Potion - 50 coins."); // increase hero hp with 20%
         System.out.println("6. Back. ");
         System.out.println("Please select between 1 & 6 to choose your equipment - shop ");

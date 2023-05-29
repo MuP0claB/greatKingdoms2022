@@ -6,9 +6,10 @@ public class Dagon extends Monster {
         super("Dagon", 100, 220);
     }
 
-    @Override
     void monsterFightChallenge() {
         areMissionsCompleted();
     }
-
+    public void fightWithDagon () {
+        fightWithMonster();
+    }
 }

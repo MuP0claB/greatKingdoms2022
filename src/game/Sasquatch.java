@@ -8,11 +8,14 @@ public class Sasquatch extends Monster {
         super("Sasquatch", 100, 170);
     }
 
-    @Override
+
     void monsterFightChallenge() {
         System.out.println(areMissionsCompleted());
         //TODO while hero HP>0 repeat until smn die.(
+
         //TODO build logic for the fight
     }
-
+    public void fightWithSasquatch () {
+        fightWithMonster();
+    }
 }
