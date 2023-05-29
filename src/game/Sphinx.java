@@ -11,11 +11,11 @@ public class Sphinx extends Monster {
     @Override
     public void monsterFightChallenge() {
         Scanner scanner = new Scanner(System.in);
-        if(!areMissionsCompleted()){
-            System.out.println("You don't have  the  pieces to continue");
-          Game.chooseYourMission();
-        }
 
+        if (!areMissionsCompleted()) {
+            System.out.println("You don't have  the  pieces to continue");
+            Game.chooseYourMission();
+        }
 
         if (GameData.currentHero.healthPoints <= 20) {
             System.out.printf("Your HP are %d. Are you sure you want to proceed? \n 1. Yes \n 2. No", GameData.currentHero.healthPoints);
@@ -54,7 +54,7 @@ public class Sphinx extends Monster {
         }
     }
 
-   public void optionToRun() {
+    public void optionToRun() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. Continue \n2. Run");
 

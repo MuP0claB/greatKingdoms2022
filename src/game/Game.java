@@ -81,8 +81,7 @@ public class Game {
 
     public static void checkInventory() {
         String[] headers = {"", "Name", "Your HP", "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
-        String[][] data = {
-                {"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity())}};
+        String[][] data = {{"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity())}};
         System.out.println(AsciiTable.getTable(headers, data));
         mainMenu();
     }
@@ -140,6 +139,7 @@ public class Game {
             default -> chooseYourMission();
         }
     }
+
     public static List<String> wizardQuestions(int num) {
         List<String> question = new ArrayList<>();
         switch (num) {
@@ -177,8 +177,9 @@ public class Game {
         }
         return question;
     }
+
     public static void meetTheWizard(Map<String, Boolean> mapPieces) {
-        //TODO check if the value of mission is true
+        isMissionCompleted("Meet the Wizard");
         Scanner scanner = new Scanner(System.in);
 
         if (GameData.currentHero.healthPoints <= 10) {
@@ -204,9 +205,9 @@ public class Game {
             for (String s : question) {
                 System.out.println(s);
             }
-             String userInput = scanner.nextLine();
+            String userInput = scanner.nextLine();
 
-            while(!(userInput.equals("a") || userInput.equals("b") || userInput.equals("c"))) {
+            while (!(userInput.equals("a") || userInput.equals("b") || userInput.equals("c"))) {
                 System.out.println("Please enter only valid letters");
                 userInput = scanner.nextLine();
             }
@@ -229,14 +230,23 @@ public class Game {
         }
         chooseYourMission();
 
+
     }
 
     public static void fightTheMonster(Map<String, Boolean> mapPieces) {
 
     }
 
+    public static void isMissionCompleted(String nameOfMission) {
+        if (GameData.currentHero.heroMapPieces.get(nameOfMission)) {
+            System.out.println("You already have this piece of the map");
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+            chooseYourMission();
+        }
+    }
+
     public static void guessTheNumber(Map<String, Boolean> mapPieces) {
-        //TODO check if the value of mission is true
+        isMissionCompleted("Guess the number");
         InstructionHelper.instructionsForGuessTheNumberGame();
         Scanner scanner = new Scanner(System.in);
         int current = new Random().nextInt(51);
@@ -257,13 +267,14 @@ public class Game {
         if (isCorrect) {
             System.out.println("You guess THE NUMBER");
             System.out.println("You've got another piece of Map !");
-            mapPieces.put("Guess The Number", true);
-            // TODO Increase piecesMap++
+            mapPieces.put("Guess the number", true);
         } else {
             System.out.println("YOU FAILED ! THE NUMBER IS " + current);
         }
         chooseYourMission();
     }
+    //It has to be the first method when enter the mission.
+
 
 }
 
