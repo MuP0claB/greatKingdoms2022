@@ -1,4 +1,8 @@
-package game;
+package game.monsters;
+
+import game.Game;
+import game.GameData;
+import game.InstructionHelper;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,7 +16,6 @@ public abstract class Monster {
 
     private int monsterAttack;
 
-    abstract void monsterFightChallenge();
 
     public Monster(String name, int monsterPoints, int monsterAttack) {
         this.name = name;
@@ -45,7 +48,7 @@ public abstract class Monster {
         Random rand = new Random();
         int monsterDamage = 0;
 
-        switch (GameData.currentHero.defense) {
+        switch (GameData.currentHero.defence) {
             case 0:
                 monsterDamage = rand.nextInt(51, 60);
                 break;
@@ -100,8 +103,8 @@ public abstract class Monster {
     }
 
     protected void fightWithMonster() {
+
         while (GameData.currentHero.healthPoints > 0 && this.getMonsterPoints() > 0) {
-            System.out.println("Fight !");
             GameData.currentHero.healthPoints -= getMonsterDamage();
             decreaseMonsterHealthPoints(getHeroDamage());
 
@@ -136,12 +139,4 @@ public abstract class Monster {
             optionToRun();
         }
     }
-//
-//    private void verifyNameMonster (String monster) {
-//        switch (monster) {
-//            case "Sphinx" -> Sphinx.fightWithSphinx();
-//            case "Sasquatch" -> Sasquatch.fightWithSasquatch();
-//            case "Dagon" -> Dagon.fightWithDagon();
-//        }
-//    }
 }

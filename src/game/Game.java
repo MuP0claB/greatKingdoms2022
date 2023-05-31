@@ -1,6 +1,10 @@
 package game;
 
 import com.github.freva.asciitable.AsciiTable;
+import game.monsters.Dagon;
+import game.monsters.Monster;
+import game.monsters.Sasquatch;
+import game.monsters.Sphinx;
 
 import java.util.*;
 
@@ -80,8 +84,18 @@ public class Game {
     }
 
     public static void checkInventory() {
-        String[] headers = {"", "Name", "Your HP", "Monster", "Monster HP", "Equipment", "Coins", "Resources"};
-        String[][] data = {{"1", GameData.currentHero.name, String.valueOf(GameData.currentHero.healthPoints), String.valueOf(GameData.currentHero.location.getMonsterName()), String.valueOf(GameData.currentHero.location.getMonsterPoints()), String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""), String.valueOf(GameData.currentHero.coins), String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity())}};
+        String[] headers = {"", "Name", "Your HP", "Monster", "Monster HP", "Equipment", "Coins", "Resources", "Attack", "Defence"};
+        String[][] data = {{"1",
+                GameData.currentHero.name,
+                String.valueOf(GameData.currentHero.healthPoints),
+                String.valueOf(GameData.currentHero.monster.getName()),
+                String.valueOf(GameData.currentHero.monster.getMonsterPoints()),
+                String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""),
+                String.valueOf(GameData.currentHero.coins),
+                String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity()),
+                String.valueOf(GameData.currentHero.attack),
+                String.valueOf(GameData.currentHero.defence)
+        }};
         System.out.println(AsciiTable.getTable(headers, data));
         mainMenu();
     }
@@ -133,8 +147,8 @@ public class Game {
         int missionChoice = scanner.nextInt();
         switch (missionChoice) {
             case 1 -> meetTheWizard(GameData.currentHero.heroMapPieces);
-            case 2 -> GameData.currentHero.monster.getName();
-            case 3 -> guessTheNumber(GameData.currentHero.heroMapPieces);
+            case 2 -> guessTheNumber(GameData.currentHero.heroMapPieces);
+            case 3 -> fightTheMonster();
             case 4 -> mainMenu();
             default -> chooseYourMission();
         }
@@ -229,13 +243,8 @@ public class Game {
             GameData.currentHero.healthPoints -= 10;
         }
         chooseYourMission();
-
-
     }
 
-    public static void fightTheMonster(Map<String, Boolean> mapPieces) {
-
-    }
 
     public static void isMissionCompleted(String nameOfMission) {
         if (GameData.currentHero.heroMapPieces.get(nameOfMission)) {
@@ -274,7 +283,19 @@ public class Game {
         chooseYourMission();
     }
     //It has to be the first method when enter the mission.
-
+    public static void fightTheMonster() {
+        Monster monster = GameData.currentHero.monster;
+        if (monster instanceof Sphinx) {
+            Sphinx sphinx = (Sphinx) monster;
+            sphinx.fightWithSphinx();
+        } else if (monster instanceof Dagon) {
+            Dagon dagon = (Dagon) monster;
+            dagon.fightWithDagon();
+        } else if (monster instanceof Sasquatch) {
+            Sasquatch sasquatch = (Sasquatch) monster;
+            sasquatch.fightWithSasquatch();
+        }
+    }
 
 }
 

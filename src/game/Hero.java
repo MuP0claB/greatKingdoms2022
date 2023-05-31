@@ -1,5 +1,10 @@
 package game;
 
+import game.monsters.Dagon;
+import game.monsters.Monster;
+import game.monsters.Sasquatch;
+import game.monsters.Sphinx;
+
 import java.util.*;
 
 public enum Hero {
@@ -17,7 +22,7 @@ public enum Hero {
     public Set<String> equipmentSet;
     public final Location location;
     public int coins;
-    public int defense;
+    public int defence;
     public int attack;
     public Monster monster;
     public Map<String, Boolean> heroMapPieces = new LinkedHashMap<>(){{
@@ -31,14 +36,14 @@ public enum Hero {
         put(3, LA_AREA_HERO);
     }};
 
-    private Hero(String name, int healthPoints, SuperAbility ability, Location location, int coins, Set<String> equipmentSet, int defense, int attack, Monster monster) {
+    private Hero(String name, int healthPoints, SuperAbility ability, Location location, int coins, Set<String> equipmentSet, int defence, int attack, Monster monster) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.ability = ability;
         this.location = location;
         this.coins = coins;
         this.equipmentSet = equipmentSet;
-        this.defense = defense;
+        this.defence = defence;
         this.attack = attack;
         this.monster = monster;
     }

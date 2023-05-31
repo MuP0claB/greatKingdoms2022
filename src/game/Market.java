@@ -26,11 +26,11 @@ public class Market {
         switch (choice) {
             case 1:
                 buyEquipmentInStore("Armour", 50);
-                GameData.currentHero.defense += 20;
+                GameData.currentHero.defence += 20;
                 break;
             case 2:
                 buyEquipmentInStore("Shield", 40);
-                GameData.currentHero.defense += 10;
+                GameData.currentHero.defence += 10;
                 break;
             case 3:
                 buyEquipmentInStore("Knife", 40);

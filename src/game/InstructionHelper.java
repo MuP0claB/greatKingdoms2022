@@ -44,10 +44,9 @@ public class InstructionHelper {
     }
 
     public static void missionOptions() {
-        System.out.println("1. Meet the Wizard"); // Магьосникът ти задава 3 въпроса от Стани Богат ;)
-        System.out.println("2. Fight with the mythical monster"); // Roll The Dice <-> Героят и чудовището се редуват в хвърлянето на заровете
-         // Math.random() и се бият за надмощие
-        System.out.println("3. Guess The Number"); //
+        System.out.println("1. Meet the Wizard");
+        System.out.println("2. Guess The Number");
+        System.out.println("3. Fight with the mythical monster");
         // Резервен Вариант : 4. Solve The Mystery <-> Намаляват се с 20 т.
         System.out.println("4. Back to the main menu");
         System.out.println("Please choose between 1 & 4 ");

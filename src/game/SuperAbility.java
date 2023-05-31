@@ -35,7 +35,7 @@ public enum SuperAbility {
                 levelUp(GameData.currentHero.attack, "Your current defense is ");
                 break;
             case GETTING_INVISIBLE:
-                levelUp(GameData.currentHero.defense, "Your current attack is ");
+                levelUp(GameData.currentHero.defence, "Your current attack is ");
                 break;
         }
 
