@@ -10,11 +10,11 @@ import java.util.*;
 public enum Hero {
 
 
-    MOUNTAIN_HERO("Marko The Great", 120, SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE, 100, new HashSet<>(), 0, 0, new Sasquatch() ),
+    MOUNTAIN_HERO("Marko The Great", 120, SuperAbility.HYPER_VENTILATION, Location.THE_MOUNTAIN_PARADISE, 100, new HashSet<>(), 0, 0),
 
-    SEA_HERO("Triton The Brave", 100, SuperAbility.THUNDER_BOLT, Location.THE_FLOATING_ISLAND, 100, new HashSet<>(), 0, 20, new Dagon()),
+    SEA_HERO("Triton The Brave", 100, SuperAbility.THUNDER_BOLT, Location.THE_FLOATING_ISLAND, 100, new HashSet<>(), 0, 20),
 
-    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.LA_AREA_EMPIRE, 100, new HashSet<>(), 20, 0, new Sphinx());
+    LA_AREA_HERO("Mad Max", 100, SuperAbility.GETTING_INVISIBLE, Location.LA_AREA_EMPIRE, 100, new HashSet<>(), 20, 0);
 
     public final String name;
     public int healthPoints;
@@ -24,7 +24,7 @@ public enum Hero {
     public int coins;
     public int defence;
     public int attack;
-    public Monster monster;
+
     public Map<String, Boolean> heroMapPieces = new LinkedHashMap<>(){{
         put("Meet the Wizard" , true);
         put("Guess the number" , true);
@@ -36,7 +36,7 @@ public enum Hero {
         put(3, LA_AREA_HERO);
     }};
 
-    private Hero(String name, int healthPoints, SuperAbility ability, Location location, int coins, Set<String> equipmentSet, int defence, int attack, Monster monster) {
+    private Hero(String name, int healthPoints, SuperAbility ability, Location location, int coins, Set<String> equipmentSet, int defence, int attack) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.ability = ability;
@@ -45,7 +45,6 @@ public enum Hero {
         this.equipmentSet = equipmentSet;
         this.defence = defence;
         this.attack = attack;
-        this.monster = monster;
     }
 
     public Resources getResourceByCurrentHero() {

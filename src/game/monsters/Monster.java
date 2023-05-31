@@ -112,13 +112,15 @@ public abstract class Monster {
                 InstructionHelper.deadHero();
                 GameData.currentHero.healthPoints = 0;
                 break;
+                
             } else if (this.getMonsterPoints() < 1) {
                 InstructionHelper.deadMonster();
                 this.setMonsterPoints(0);
+                InstructionHelper.happyEnding();
                 break;
             }
             System.out.println("Hero HP " + GameData.currentHero.healthPoints);
-            System.out.println("Monster HP " + GameData.currentHero.monster.getMonsterPoints());
+            System.out.println("Monster HP " + currentHero.location.getMonster().getMonsterPoints());
 
             optionToRun();
         }

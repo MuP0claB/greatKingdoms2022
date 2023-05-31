@@ -89,6 +89,11 @@ public class InstructionHelper {
         System.out.println("You are dead! The game is over!");
     }
     public static void deadMonster(){
-        System.out.println("Yhe monster is dead! You collect the last piece of map!");
+        System.out.println("The monster is dead! You collect the last piece of map!");
     }
+
+    public static void happyEnding(){
+        System.out.println("Congratulations!!👏🏆 You have passed  all the challenges and save the princess " + GameData.currentHero.location.getPrincessName().name() + "🍑");
+    }
+
 }

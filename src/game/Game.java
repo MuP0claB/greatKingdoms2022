@@ -88,8 +88,8 @@ public class Game {
         String[][] data = {{"1",
                 GameData.currentHero.name,
                 String.valueOf(GameData.currentHero.healthPoints),
-                String.valueOf(GameData.currentHero.monster.getName()),
-                String.valueOf(GameData.currentHero.monster.getMonsterPoints()),
+                String.valueOf(GameData.currentHero.location.getMonster().getName()),
+                String.valueOf(GameData.currentHero.location.getMonster().getMonsterPoints()),
                 String.valueOf(GameData.currentHero.equipmentSet).replace("[", "").replace("]", ""),
                 String.valueOf(GameData.currentHero.coins),
                 String.valueOf(GameData.currentHero.getResourceByCurrentHero().getQuantity()),
@@ -284,7 +284,7 @@ public class Game {
     }
     //It has to be the first method when enter the mission.
     public static void fightTheMonster() {
-        Monster monster = GameData.currentHero.monster;
+        Monster monster = GameData.currentHero.location.getMonster();
         if (monster instanceof Sphinx) {
             Sphinx sphinx = (Sphinx) monster;
             sphinx.fightWithSphinx();
