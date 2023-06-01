@@ -6,7 +6,7 @@ public class InstructionHelper {
         System.out.println("2. Check inventory");
         System.out.println("3. Take resources");
         System.out.println("4. Meet your GURU");
-        System.out.println("5. Take your journey");
+        System.out.println("5. Let's dive into the missions");
         System.out.println("Please choose between 1 & 5 - main menu");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
@@ -87,13 +87,14 @@ public class InstructionHelper {
     }
     public static void deadHero(){
         System.out.println("You are dead! The game is over!");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
     public static void deadMonster(){
         System.out.println("The monster is dead! You collect the last piece of map!");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void happyEnding(){
-        System.out.println("Congratulations!!👏🏆 You have passed  all the challenges and save the princess " + GameData.currentHero.location.getPrincessName().name() + "🍑");
+        System.out.println("Congratulations !!! 🏆 You have passed all the challenges and save the princess " + GameData.currentHero.location.getPrincessName().name() + GameData.currentHero.location.getPrincessName().princessEmogi);
     }
-
 }

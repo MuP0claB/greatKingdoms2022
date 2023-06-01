@@ -82,13 +82,15 @@ public abstract class Monster {
         int heroDamage = 0;
         if (hAttack <= 10) {
             heroDamage = rand.nextInt(1, 5);
-        } else if (hAttack > 10 && hAttack <= 20) {
+        } else if (hAttack <= 20) {
             heroDamage = rand.nextInt(6, 10);
-        } else if (hAttack > 20 && hAttack <= 30) {
+        } else if (hAttack <= 30) {
             heroDamage = rand.nextInt(11, 15);
-        } else if (hAttack > 30 && hAttack <= 40) {
+        } else if (hAttack <= 40) {
             heroDamage = rand.nextInt(26, 30);
-        } else if (hAttack > 50) {
+        } else if (hAttack <= 50) {
+            heroDamage = rand.nextInt(31, 40);
+        } else {
             heroDamage = rand.nextInt(41, 50);
         }
         return heroDamage;

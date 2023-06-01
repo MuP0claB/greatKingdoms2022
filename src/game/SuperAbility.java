@@ -14,18 +14,6 @@ public enum SuperAbility {
 
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getIncreasePoints() {
-        return increasePoints;
-    }
-
     public void increaseAbility() {
         switch (GameData.currentHero.ability) {
             case HYPER_VENTILATION:
@@ -38,7 +26,6 @@ public enum SuperAbility {
                 levelUp(GameData.currentHero.defence, "Your current attack is ");
                 break;
         }
-
     }
 
     private void levelUp(int statsToIncrease, String message) {

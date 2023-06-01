@@ -46,7 +46,7 @@ public class Game {
                 checkInventory();
                 break;
             case 3:
-                takeResources(); // Пасивно или активно действие.
+                takeResources();
                 break;
             case 4:
                 InstructionHelper.printGuruIntro();
@@ -80,7 +80,6 @@ public class Game {
                 System.out.println("\033[31mInvalid choice!\033[0m");
                 market();
         }
-        mainMenu();
     }
 
     public static void checkInventory() {
@@ -138,7 +137,7 @@ public class Game {
         } else {
             mainMenu();
         }
-        mainMenu();
+        //  mainMenu();
     }
 
     public static void chooseYourMission() {
@@ -282,6 +281,7 @@ public class Game {
         }
         chooseYourMission();
     }
+
     //It has to be the first method when enter the mission.
     public static void fightTheMonster() {
         Monster monster = GameData.currentHero.location.getMonster();
