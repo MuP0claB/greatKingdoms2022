@@ -14,7 +14,6 @@ public class Game {
 
     public static void main(String[] args) {
         makeHeroChoice();
-
     }
 
     public static void makeHeroChoice() {
@@ -27,6 +26,7 @@ public class Game {
                 heroChoice = scanner.nextInt();
                 GameData.currentHero = Hero.heroChoise.get(heroChoice);
                 InstructionHelper.printHeroInfo(GameData.currentHero);
+                StoryTelling.printIntroduction(GameData.currentHero);
             } catch (Exception e) {
                 scanner.nextLine();
                 System.err.println("Input only VALID NUMBERS");

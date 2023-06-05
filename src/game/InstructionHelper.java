@@ -55,6 +55,7 @@ public class InstructionHelper {
 
     public static void printHeroInfo(Hero hero) {
         System.out.println("You have chosen " + hero.name + ", has " + hero.healthPoints + " HP, and his super ability is " + hero.ability + ".");
+
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
