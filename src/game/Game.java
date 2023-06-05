@@ -8,6 +8,8 @@ import game.monsters.Sphinx;
 
 import java.util.*;
 
+import static game.GameData.currentHero;
+
 public class Game {
 
     public static void main(String[] args) {
@@ -145,8 +147,8 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         int missionChoice = scanner.nextInt();
         switch (missionChoice) {
-            case 1 -> meetTheWizard(GameData.currentHero.heroMapPieces);
-            case 2 -> guessTheNumber(GameData.currentHero.heroMapPieces);
+            case 1 -> meetTheWizard();
+            case 2 -> guessTheNumber();
             case 3 -> fightTheMonster();
             case 4 -> mainMenu();
             default -> chooseYourMission();
@@ -191,7 +193,7 @@ public class Game {
         return question;
     }
 
-    public static void meetTheWizard(Map<String, Boolean> mapPieces) {
+    public static void meetTheWizard() {
         isMissionCompleted("Meet the Wizard");
         Scanner scanner = new Scanner(System.in);
 
@@ -235,8 +237,9 @@ public class Game {
 
         if (correctAnswers == 3) {
             System.out.println("Congratulations!");
-            mapPieces.put("Meet the Wizard", true);
-            System.out.println(mapPieces);
+            GameData.currentHero.heroMapPieces.put("Meet the Wizard", true);
+            GameData.currentHero.coins += 20;
+            System.out.println("You earned 20 coins.");
         } else {
             System.out.println("Come back when you have learned Java better! \033[31mYou lost 10 HP!\033[0m");
             GameData.currentHero.healthPoints -= 10;
@@ -244,16 +247,7 @@ public class Game {
         chooseYourMission();
     }
 
-
-    public static void isMissionCompleted(String nameOfMission) {
-        if (GameData.currentHero.heroMapPieces.get(nameOfMission)) {
-            System.out.println("You already have this piece of the map");
-            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
-            chooseYourMission();
-        }
-    }
-
-    public static void guessTheNumber(Map<String, Boolean> mapPieces) {
+    public static void guessTheNumber() {
         isMissionCompleted("Guess the number");
         InstructionHelper.instructionsForGuessTheNumberGame();
         Scanner scanner = new Scanner(System.in);
@@ -275,15 +269,19 @@ public class Game {
         if (isCorrect) {
             System.out.println("You guess THE NUMBER");
             System.out.println("You've got another piece of Map !");
-            mapPieces.put("Guess the number", true);
+            GameData.currentHero.heroMapPieces.put("Guess the number", true);
+            GameData.currentHero.coins += 20;
+            System.out.println("You earned 20 coins.");
+
         } else {
-            System.out.println("YOU FAILED ! THE NUMBER IS " + current);
+            GameData.currentHero.healthPoints -= 10;
+            System.out.println("YOU FAILED ! YOU LOST 10 HP ! THE NUMBER IS " + current);
         }
         chooseYourMission();
     }
 
-    //It has to be the first method when enter the mission.
     public static void fightTheMonster() {
+        areMissionsCompleted();
         Monster monster = GameData.currentHero.location.getMonster();
         if (monster instanceof Sphinx) {
             Sphinx sphinx = (Sphinx) monster;
@@ -297,6 +295,26 @@ public class Game {
         }
     }
 
+    public static void areMissionsCompleted() {
+//        Boolean areFinished = !GameData.currentHero.heroMapPieces.containsValue(false);
+//        if (!areFinished) {
+//            System.out.println("You didn't complete your missions!");
+//            Game.chooseYourMission();
+//        }
+        if (currentHero.heroMapPieces.containsValue(false)) {
+            System.out.println("You still didn't collect the first two pieces of the map !");
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+            chooseYourMission();
+        };
+    }
+
+    public static void isMissionCompleted(String nameOfMission) {
+        if (GameData.currentHero.heroMapPieces.get(nameOfMission)) {
+            System.out.println("You already have this piece of the map");
+            System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+            chooseYourMission();
+        }
+    }
 }
 
 // String -> boolean

@@ -35,15 +35,6 @@ public abstract class Monster {
         return monsterAttack;
     }
 
-    public boolean areMissionsCompleted() {
-//        Boolean areFinished = !GameData.currentHero.heroMapPieces.containsValue(false);
-//        if (!areFinished) {
-//            System.out.println("You didn't complete your missions!");
-//            Game.chooseYourMission();
-//        }
-        return !currentHero.heroMapPieces.containsValue(false);
-    }
-
     public int getMonsterDamage() {
         Random rand = new Random();
         int monsterDamage = 0;
