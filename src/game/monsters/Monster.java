@@ -3,6 +3,7 @@ package game.monsters;
 import game.Game;
 import game.GameData;
 import game.InstructionHelper;
+import game.StoryTelling;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -104,13 +105,14 @@ public abstract class Monster {
             if (GameData.currentHero.healthPoints < 1) {
                 InstructionHelper.deadHero();
                 GameData.currentHero.healthPoints = 0;
-                break;
+                return;
                 
             } else if (this.getMonsterPoints() < 1) {
                 InstructionHelper.deadMonster();
                 this.setMonsterPoints(0);
                 InstructionHelper.happyEnding();
-                break;
+                StoryTelling.printWinStory();
+                return;
             }
             System.out.println("Hero HP " + GameData.currentHero.healthPoints);
             System.out.println("Monster HP " + currentHero.location.getMonster().getMonsterPoints());

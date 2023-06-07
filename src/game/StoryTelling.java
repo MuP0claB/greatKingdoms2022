@@ -10,42 +10,77 @@ public class StoryTelling {
             case 2:
                 System.out.println("There are two sisters: one gives birth to the other and she, in turn, gives birth to the first. Who are the two sisters?");
                 break;
-            // TODO To added from Rado The Great;
+
         }
     }
 
     public static void mountainHeroInfo() {
-        System.out.println("В планинския свят съществуваше герой на име Марко, който беше благословен със супер сила - хипер вентилация. \n" +
-                "Хипер вентилацията помага на Крали Марко да е по - издръжлив и увеличава жизнеността му.\n" +
-                "Крали Марко изкачваше Високата планина не случайно, в търсенена на местното чудовище - Голямата стъпка, което е пленило прицесата.\n " +
-                "Докато крачеше нагоре в далечината видя стар овчар. Това не беше случайна среща.\n" +
-                " Мъдрият овчар разкрива местоположението на чудовището, но първо  трябва да премине през 2 изпитания за да събере парчета от картата. "
+        System.out.println("\"In the mountainous world, there existed a hero named Marco, who was blessed with a superpower - hyper ventilation.\"\n" +
+                "\"Hyper ventilation helps King Marco to be more enduring and increases his vitality.\"\n" +
+                "\"King Marco climbed the High Mountain not by chance, in search of the local monster - the Sasquatch, which had captivated the process.\"\n" +
+                "\"While ascending, he saw an old shepherd in the distance. It was not a random encounter.\"\n" +
+                "\"The wise shepherd reveals the location of the monster, but first, Marco must pass through 2 trials to gather pieces of the map.\""
         );
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+
     }
 
     public static void seaHeroInfo() {
-        System.out.println("След пристигането на острова, Triton The Great се запознава с местните жители,\n " +
-                "които му разказват за легендата за страховитото чудовище, което обитава острова, на име ДАГОН.\n" +
-                " Те разказват и за принцесата на острова, която е била отвлечена от чудовището, заедно със съкровището.\n" +
-                "Героят решава да помогне е на местните жители и да спаси принцесата.\n " +
-                "За да разбере къде се намира принцесата, трябва да събере всички 4 парчета от картата.\n " +
-                "За първите 3 части трябва да изпълни 3 мисии. Последното парче от картата е при чудовището,\n " +
-                " което трябва да победи, за да вземе последната част от картата.");
+        System.out.println("After arriving on the island, Triton The Great gets acquainted with the locals, who tell him about the legend of the terrifying monster inhabiting the island, named DAGON.\n" +
+                "They also share the story of the princess of the island, who was abducted by the monster along with the treasure.\n" +
+                "The hero decides to help the locals and rescue the princess.\n" +
+                "In order to find out the princess's whereabouts, he needs to gather all 3 pieces of the map.\n" +
+                "For the first 2 parts, he must complete 2 missions. The last piece of the map is with the monster,\n" +
+                "which he must defeat in order to obtain the final part of the map.");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
+
     }
 
     public static void madInfo() {
-        System.out.println(" След пристигането в пустинята, героят Mad Max се сблъсква с местните жители,\n" +
-                " които му разказват за легендата за страшното чудовище - Свинкса.\n " +
-                "Те споделят историята за принцесата на пустинята, която е била пленена от Свинкса, заедно със скъпоценното съкровище на пустинята.\n" +
-                " Героят се обещава да помогне на местните жители и да освободи принцесата.\n" +
-                "За да разбере местоположението на принцесата, Mad Max трябва да събере двете части от загадъчната карта.\n " +
-                "Той трябва да изпълни две изключително опасни мисии в пустинята, изискващи смелост и интелигентност.\n" +
-                "След успешното изпълнение на тези мисии, Маd Max получава липсващите парчета от картата.\n" +
-                " Но най-трудната част остава пред него - да се изправи срещу Свинкса и да го победи, за да спаси принцесата.\n" +
-                " Получава липсващите парчета от картата.");
+        System.out.println("After arriving in the desert, the hero Mad Max encounters the local inhabitants who tell him about the legend of the fearsome monster - the Sphinx.\n" +
+                "They share the story of the desert princess, who was captured by the Sphinx along with the precious treasure of the desert.\n" +
+                "The hero promises to help the local inhabitants and free the princess.\n" +
+                "To discover the location of the princess, Mad Max must gather the two parts of the mysterious map.\n" +
+                "The hero have been blessed with the ability to turn invisible.\n" +
+                "After successfully completing these missions, the location of the monster will be  revealed.");
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
-    public static void printIntroduction(Hero hero){
-        switch (hero){
+
+    public static void princess1() {
+        System.out.println("I'm eternally grateful for saving my life, noble hero. My name is Victoria. " +
+                "Please help me to return safety to my castle and you will have whatever you require");
+        System.out.println("\032[31m< - > < - > < - > < - >\032[0m");
+        System.out.println("After they returned to the castle, Victoria's father rewarded Marco with land,gold and title");
+
+    }
+
+    public static void princess2() {
+        System.out.println("You have my deepest thanks, great hero. I am the princess of the island - Melissa." +
+                "Triton defeated the creature and rescued the princess. " +
+                "Their joy was shared by the entire kingdom, and Triton was hailed as a true hero. " +
+                "Together, Triton and Melissa brought peace and prosperity to the realm, and their love story became a symbol of hope for all.");
+
+    }
+
+    public static void princess3() {
+        System.out.println("Mad Max emerged victorious, rescuing LolaFerrari and bringing light back to the kingdom." +
+                " The grateful princess bestowed upon him a crown, and they lived happily ever after, their love story" +
+                " becoming a legend that would be told for generations. ");
+    }
+
+    public static void printWinStory(){
+
+        switch(GameData.currentHero.location.getPrincessName()){
+            case VICTORIA -> princess1();
+            case MELISSA -> princess2();
+            case LOLA_FERRARI -> princess3();
+        }
+
+    }
+
+
+    public static void printIntroduction(Hero hero) {
+        switch (hero) {
             case SEA_HERO -> seaHeroInfo();
             case LA_AREA_HERO -> madInfo();
             case MOUNTAIN_HERO -> mountainHeroInfo();
