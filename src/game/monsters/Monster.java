@@ -97,14 +97,11 @@ public abstract class Monster {
     }
 
     protected void fightWithMonster() {
-
-        while (GameData.currentHero.healthPoints > 0 && this.getMonsterPoints() > 0) {
             GameData.currentHero.healthPoints -= getMonsterDamage();
             decreaseMonsterHealthPoints(getHeroDamage());
 
             if (GameData.currentHero.healthPoints < 1) {
                 InstructionHelper.deadHero();
-                GameData.currentHero.healthPoints = 0;
                 return;
                 
             } else if (this.getMonsterPoints() < 1) {
@@ -118,7 +115,6 @@ public abstract class Monster {
             System.out.println("Monster HP " + currentHero.location.getMonster().getMonsterPoints());
 
             optionToRun();
-        }
     }
 
     public void optionToRun() {

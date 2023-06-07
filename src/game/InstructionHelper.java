@@ -11,28 +11,23 @@ public class InstructionHelper {
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
-    // TODO Create method to handle exceptions
     public static void shopInstructions() {
         System.out.println("1. Sell resources");
-        System.out.println("2. Buy equipment"); // weapons and equipments
+        System.out.println("2. Buy equipment");
         System.out.println("3. Back to the main menu");
         System.out.println("Please choose between 1 & 3 - shop actions");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
     }
 
     public static void printShopEquipment() {
-        System.out.println("1. Armour 🛡 COST: 50 coins. Increase defense: 20 points ");
+        System.out.println("1. Helmet 🪖 COST: 50 coins. Increase defense: 20 points ");
         System.out.println("2. Shield 🛡️ - 40 coins. Increase defense: 10 points ");
-        System.out.println("3. Knife ⚔🗡️ - 40 coins. Increase attack: 15 points ");
+        System.out.println("3. Knife 🗡️ - 40 coins. Increase attack: 15 points ");
         System.out.println("4. Gun 🔫- 50 coins. Increase attack: 25 points ");
         System.out.println("5. Potion - 50 coins. Increase HP with up to 20 ");
         System.out.println("6. Back. ");
         System.out.println("Please select between 1 & 6 to choose your equipment - shop ");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
-    }
-
-    public static void takeResources() {
-        // TODO: Fill with StoryTelling
     }
 
     public static void increaseYourSkillsMenu() {
@@ -47,7 +42,6 @@ public class InstructionHelper {
         System.out.println("1. Meet the Wizard");
         System.out.println("2. Guess The Number");
         System.out.println("3. Fight with the mythical monster");
-        // Резервен Вариант : 4. Solve The Mystery <-> Намаляват се с 20 т.
         System.out.println("4. Back to the main menu");
         System.out.println("Please choose between 1 & 4 ");
         System.out.println("\033[31m< - > < - > < - > < - >\033[0m");

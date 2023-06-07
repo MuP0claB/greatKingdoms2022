@@ -124,11 +124,11 @@ public class Game {
         int choice = scanner.nextInt();
 
         if (choice == 1) {
-            if (GameData.currentHero.coins >= 100) {
-                GameData.currentHero.coins -= 100;
+            if (GameData.currentHero.coins >= 50) {
+                GameData.currentHero.coins -= 50;
                 if (GameData.currentHero.name.equals("Marko The Great")) {
                     SuperAbility.HYPER_VENTILATION.increaseAbility();
-                } else if (GameData.currentHero.name.equals("Marin The Boss")) {
+                } else if (GameData.currentHero.name.equals("Triton The Brave")) {
                     SuperAbility.THUNDER_BOLT.increaseAbility();
                 } else {
                     SuperAbility.GETTING_INVISIBLE.increaseAbility();
@@ -136,10 +136,43 @@ public class Game {
             } else {
                 System.out.println("\033[31mYou don't have enough coins.\033[0m");
             }
-        } else {
-            mainMenu();
         }
-        //  mainMenu();
+        mainMenu();
+    }
+
+    public static void guessTheNumber() {
+        if (!isMissionCompleted("Guess the number")) {
+            InstructionHelper.instructionsForGuessTheNumberGame();
+            Scanner scanner = new Scanner(System.in);
+            int current = new Random().nextInt(51);
+            boolean isCorrect = false;
+            for (int i = 0; i < 3; i++) {
+                int digit = scanner.nextInt();
+                if (digit == current) {
+                    isCorrect = true;
+                    break;
+                } else {
+                    if (digit > current) {
+                        System.out.println("Too high ! 📈");
+                    } else {
+                        System.out.println("Too low ! 📉");
+                    }
+                }
+            }
+            if (isCorrect) {
+                System.out.println("You guess THE NUMBER");
+                System.out.println("You've got another piece of Map !");
+                GameData.currentHero.heroMapPieces.put("Guess the number", true);
+                GameData.currentHero.coins += 20;
+                System.out.println("You earned 20 coins.");
+
+            } else {
+                GameData.currentHero.healthPoints -= 10;
+                System.out.println("YOU FAILED ! YOU LOST 10 HP ! THE NUMBER IS " + current);
+            }
+
+        }
+        chooseYourMission();
     }
 
     public static void chooseYourMission() {
@@ -244,39 +277,7 @@ public class Game {
             System.out.println("Come back when you have learned Java better! \033[31mYou lost 10 HP!\033[0m");
             GameData.currentHero.healthPoints -= 10;
         }
-        chooseYourMission();
-    }
-
-    public static void guessTheNumber() {
-        isMissionCompleted("Guess the number");
-        InstructionHelper.instructionsForGuessTheNumberGame();
-        Scanner scanner = new Scanner(System.in);
-        int current = new Random().nextInt(51);
-        boolean isCorrect = false;
-        for (int i = 0; i < 3; i++) {
-            int digit = scanner.nextInt();
-            if (digit == current) {
-                isCorrect = true;
-                break;
-            } else {
-                if (digit > current) {
-                    System.out.println("Too high ! 📈");
-                } else {
-                    System.out.println("Too low ! 📉");
-                }
-            }
-        }
-        if (isCorrect) {
-            System.out.println("You guess THE NUMBER");
-            System.out.println("You've got another piece of Map !");
-            GameData.currentHero.heroMapPieces.put("Guess the number", true);
-            GameData.currentHero.coins += 20;
-            System.out.println("You earned 20 coins.");
-
-        } else {
-            GameData.currentHero.healthPoints -= 10;
-            System.out.println("YOU FAILED ! YOU LOST 10 HP ! THE NUMBER IS " + current);
-        }
+        System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
         chooseYourMission();
     }
 
@@ -305,15 +306,17 @@ public class Game {
             System.out.println("You still didn't collect the first two pieces of the map !");
             System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
             chooseYourMission();
-        };
+        }
+        ;
     }
 
-    public static void isMissionCompleted(String nameOfMission) {
+    public static boolean isMissionCompleted(String nameOfMission) {
         if (GameData.currentHero.heroMapPieces.get(nameOfMission)) {
             System.out.println("You already have this piece of the map");
             System.out.println("\033[31m< - > < - > < - > < - >\033[0m");
-            chooseYourMission();
+            return true;
         }
+        return false;
     }
 }
 

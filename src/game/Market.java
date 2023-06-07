@@ -25,7 +25,7 @@ public class Market {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                buyEquipmentInStore("Armour", 50);
+                buyEquipmentInStore("Helmet", 50);
                 GameData.currentHero.defence += 20;
                 break;
             case 2:
@@ -50,7 +50,7 @@ public class Market {
                 System.out.println("\033Invalid choice\033");
                 buyEquipment();
         }
-        Game.market();
+        buyEquipment();
     }
 
     private static void buyEquipmentInStore(String equipment, int price) {
