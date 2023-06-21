@@ -96,7 +96,7 @@ public abstract class Monster {
         this.monsterPoints = monsterPoints;
     }
 
-    protected void fightWithMonster() {
+    public void fightWithMonster() {
             GameData.currentHero.healthPoints -= getMonsterDamage();
             decreaseMonsterHealthPoints(getHeroDamage());
 

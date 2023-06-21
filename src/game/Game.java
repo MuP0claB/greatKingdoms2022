@@ -284,16 +284,7 @@ public class Game {
     public static void fightTheMonster() {
         areMissionsCompleted();
         Monster monster = GameData.currentHero.location.getMonster();
-        if (monster instanceof Sphinx) {
-            Sphinx sphinx = (Sphinx) monster;
-            sphinx.fightWithSphinx();
-        } else if (monster instanceof Dagon) {
-            Dagon dagon = (Dagon) monster;
-            dagon.fightWithDagon();
-        } else if (monster instanceof Sasquatch) {
-            Sasquatch sasquatch = (Sasquatch) monster;
-            sasquatch.fightWithSasquatch();
-        }
+        monster.fightWithMonster();
     }
 
     public static void areMissionsCompleted() {

@@ -8,7 +8,8 @@ public class Sasquatch extends Monster {
         super("Sasquatch", 100, 170);
     }
 
-    public void fightWithSasquatch() {
+    @Override
+    public void fightWithMonster() {
         if(GameData.currentHero.healthPoints >=1 && GameData.currentHero.location.getMonster().getMonsterPoints() >=1){
             System.out.println("Welcome to the battle with Sasquatch!");
             System.out.println("Fight !");

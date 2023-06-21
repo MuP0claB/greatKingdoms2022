@@ -8,10 +8,11 @@ public class Dagon extends Monster {
         super("Dagon", 100, 220);
     }
 
-    public void fightWithDagon() {
+    @Override
+    public void fightWithMonster() {
+        System.out.println("Welcome to the battle with Dagon!");
+        System.out.println("Fight !");
         while (GameData.currentHero.healthPoints > 0 && GameData.currentHero.location.getMonster().getMonsterPoints() > 0) {
-            System.out.println("Welcome to the battle with Dagon!");
-            System.out.println("Fight !");
             super.fightWithMonster();
         }
 

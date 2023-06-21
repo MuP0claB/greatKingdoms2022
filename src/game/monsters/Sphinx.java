@@ -12,7 +12,8 @@ public class Sphinx extends Monster {
         return super.getMonsterPoints();
     }
 
-    public void fightWithSphinx() {
+    @Override
+    public void fightWithMonster() {
         while (GameData.currentHero.healthPoints > 0 && GameData.currentHero.location.getMonster().getMonsterPoints() > 0) {
             System.out.println("Welcome to the battle with Sphinx!");
             System.out.println("Fight !");

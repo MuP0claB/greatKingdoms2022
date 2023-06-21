@@ -1,10 +1,5 @@
 package game;
 
-import game.monsters.Dagon;
-import game.monsters.Monster;
-import game.monsters.Sasquatch;
-import game.monsters.Sphinx;
-
 import java.util.*;
 
 public enum Hero {
@@ -26,7 +21,7 @@ public enum Hero {
     public int attack;
 
     public Map<String, Boolean> heroMapPieces = new LinkedHashMap<>() {{
-        put("Meet the Wizard", false);    //   Да се оставят на "true" при ТЕСТ на Битката с чудовището
+        put("Meet the Wizard", true);    //   Да се оставят на "true" при ТЕСТ на Битката с чудовището
         put("Guess the number", true);   //   Да се оставят на "true" при ТЕСТ на Битката с чудовището
     }};
 
